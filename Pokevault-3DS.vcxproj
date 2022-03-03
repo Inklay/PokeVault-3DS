@@ -116,6 +116,8 @@
     <ClCompile Include="source\core\source\utils\utils.cpp" />
     <ClCompile Include="source\core\source\utils\utils4.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\UI\Button.cpp" />
+    <ClCompile Include="source\utils\Vec3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\core\source\Save\ASave.hpp" />
@@ -128,6 +130,9 @@
     <ClInclude Include="source\core\source\Save\Pkm\Pk4.hpp" />
     <ClInclude Include="source\core\source\utils\utils.hpp" />
     <ClInclude Include="source\core\source\utils\utils4.hpp" />
+    <ClInclude Include="source\UI\Button.hpp" />
+    <ClInclude Include="source\UI\UI_Element.hpp" />
+    <ClInclude Include="source\utils\Vec3.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
