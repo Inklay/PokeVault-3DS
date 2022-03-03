@@ -64,8 +64,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
-    <NMakeOutput>
-    </NMakeOutput>
+    <NMakeOutput>3dslink -a 10.0.3.51 Pokevault-3ds.3dsx</NMakeOutput>
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
@@ -117,6 +116,8 @@
     <ClCompile Include="source\core\source\utils\utils4.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
+    <ClCompile Include="source\UI\Text.cpp" />
+    <ClCompile Include="source\utils\Vec2.cpp" />
     <ClCompile Include="source\utils\Vec3.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +132,9 @@
     <ClInclude Include="source\core\source\utils\utils.hpp" />
     <ClInclude Include="source\core\source\utils\utils4.hpp" />
     <ClInclude Include="source\UI\Button.hpp" />
+    <ClInclude Include="source\UI\Text.hpp" />
     <ClInclude Include="source\UI\UI_Element.hpp" />
+    <ClInclude Include="source\utils\Vec2.hpp" />
     <ClInclude Include="source\utils\Vec3.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
