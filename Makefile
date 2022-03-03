@@ -50,7 +50,7 @@ GRAPHICS		:=	gfx
 GFXBUILD		:=	$(BUILD)
 
 APP_TITLE		:=	PokeVault
-APP_DESCRIPTION	:=	Pokémon Save Manager
+APP_DESCRIPTION	:=	Pokemon Save Manager
 APP_AUTHOR		:=	Inklay
 
 #ROMFS		:=	romfs
@@ -67,7 +67,7 @@ CFLAGS	:=	-g -Wall -O2 -mword-relocations \
 
 CFLAGS	+=	$(INCLUDE) -D__3DS__
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -std=gnu++11
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -std=gnu++17
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)

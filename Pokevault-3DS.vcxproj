@@ -64,13 +64,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
-    <NMakeOutput>Pokevault-3DS.exe</NMakeOutput>
+    <NMakeOutput>
+    </NMakeOutput>
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <PublicIncludeDirectories>
     </PublicIncludeDirectories>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\devkitPro\devkitARM\include;C:\devkitPro\libctru\include</IncludePath>
+    <AdditionalOptions>/std:c++17</AdditionalOptions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
