@@ -33,9 +33,19 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build
-SOURCES		:=	source
+SOURCES		:=	source \
+				source/core/source/Save \
+				source/core/source/Save/Block \
+				source/core/source/Save/Game \
+				source/core/source/Save/Pkm \
+				source/core/source/utils
 DATA		:=	data
-INCLUDES	:=	include
+INCLUDES	:=	source \
+				source/core/source/Save \
+				source/core/source/Save/Block \
+				source/core/source/Save/Game \
+				source/core/source/Save/Pkm \
+				source/core/source/utils
 GRAPHICS	:=	gfx
 GFXBUILD	:=	$(BUILD)
 #ROMFS		:=	romfs
@@ -52,7 +62,7 @@ CFLAGS	:=	-g -Wall -O2 -mword-relocations \
 
 CFLAGS	+=	$(INCLUDE) -D__3DS__
 
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
+CXXFLAGS	:= $(CFLAGS) -fno-rtti -std=gnu++11
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
