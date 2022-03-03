@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
 
 	Button fun(pos1, size, "test");
 
-	elem.push_back(std::make_unique<Button>(pos1, size, "Default"));
+	elem.emplace_back(std::make_unique<Button>(pos1, size, "Default"));
 	elem.emplace_back(std::make_unique<Button>(pos2, size, "Locked", true));
 	elem.emplace_back(std::make_unique<Button>(pos3, size, "Selected", false, true));
 
