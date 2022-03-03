@@ -8,12 +8,20 @@ Button::Button(Vec3 pos, Vec3 size, std::string text, bool locked, bool selected
 	m_size = size;
 }
 
+u32 Button::get_color(void) {
+	if (m_is_locked)
+		return m_locked_color;
+	else if (m_is_selected)
+		return m_selected_color;
+	return m_default_color;
+}
+
 void Button::draw_lines(void) {
-	C2D_DrawRectSolid(m_pos.x + m_size.y / 2, m_pos.y, m_pos.z, m_size.x - m_size.y, m_size.y, m_default_color);
+	C2D_DrawRectSolid(m_pos.x + m_size.y / 2, m_pos.y, m_pos.z, m_size.x - m_size.y, m_size.y, get_color());
 }
 
 void Button::draw_circles(void) {
 	const int radius = m_size.y / 2;
-	C2D_DrawCircleSolid(m_pos.x + radius, m_pos.y + radius, m_pos.z, radius, m_default_color);
-	C2D_DrawCircleSolid(m_size.x - radius, m_pos.y + radius, m_pos.z, radius, m_default_color);
+	C2D_DrawCircleSolid(m_pos.x + radius, m_pos.y + radius, m_pos.z, radius, get_color());
+	C2D_DrawCircleSolid(m_size.x - radius, m_pos.y + radius, m_pos.z, radius, get_color());
 }
