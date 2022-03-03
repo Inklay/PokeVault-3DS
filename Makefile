@@ -31,23 +31,28 @@ include $(DEVKITARM)/3ds_rules
 #     - icon.png
 #     - <libctru folder>/default_icon.png
 #---------------------------------------------------------------------------------
-TARGET		:=	$(notdir $(CURDIR))
-BUILD		:=	build
-SOURCES		:=	source \
-				source/core/source/Save \
-				source/core/source/Save/Block \
-				source/core/source/Save/Game \
-				source/core/source/Save/Pkm \
-				source/core/source/utils
-DATA		:=	data
-INCLUDES	:=	source \
-				source/core/source/Save \
-				source/core/source/Save/Block \
-				source/core/source/Save/Game \
-				source/core/source/Save/Pkm \
-				source/core/source/utils
-GRAPHICS	:=	gfx
-GFXBUILD	:=	$(BUILD)
+TARGET			:=	$(notdir $(CURDIR))
+BUILD			:=	build
+SOURCES			:=	source \
+					source/core/source/Save \
+					source/core/source/Save/Block \
+					source/core/source/Save/Game \
+					source/core/source/Save/Pkm \
+					source/core/source/utils
+DATA			:=	data
+INCLUDES		:=	source \
+					source/core/source/Save \
+					source/core/source/Save/Block \
+					source/core/source/Save/Game \
+					source/core/source/Save/Pkm \
+					source/core/source/utils
+GRAPHICS		:=	gfx
+GFXBUILD		:=	$(BUILD)
+
+APP_TITLE		:=	PokeVault
+APP_DESCRIPTION	:=	Pokémon Save Manager
+APP_AUTHOR		:=	Inklay
+
 #ROMFS		:=	romfs
 #GFXBUILD	:=	$(ROMFS)/gfx
 
