@@ -1,5 +1,5 @@
 #include "./Button.hpp"
-#include <iostream>
+#include "./Colors.hpp"
 #include <3ds.h>
 
 Button::Button(Vec3 pos, Vec2 size, std::string text, bool locked, bool selected) :
@@ -12,10 +12,10 @@ m_text(Text(pos, text)) {
 
 u32 Button::get_color(void) {
 	if (m_is_locked)
-		return m_locked_color;
+		return colors::locked;
 	else if (m_is_selected)
-		return m_selected_color;
-	return m_default_color;
+		return colors::selected;
+	return colors::base;
 }
 
 void Button::draw_lines(void) {

@@ -20,9 +20,6 @@ private:
 	bool m_is_selected;
 	bool m_is_locked;
 	Vec2 m_size;
-	static const u32 m_default_color = C2D_Color32(0xFF, 0xFF, 0xFF, 0xFF);
-	static const u32 m_locked_color = C2D_Color32(0xAA, 0xAA, 0xAA, 0xFF);
-	static const u32 m_selected_color = C2D_Color32(0xF2, 0x8F, 0x24, 0xFF);
 	Text m_text;
 };
 

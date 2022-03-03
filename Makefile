@@ -50,15 +50,15 @@ INCLUDES		:=	source \
 					source/core/source/utils \
 					source/utils \
 					source/UI
-GRAPHICS		:=	gfx
-GFXBUILD		:=	$(BUILD)
+GRAPHICS		:=	gfx \
+					gfx/game_art
 
 APP_TITLE		:=	PokeVault
 APP_DESCRIPTION	:=	Pokemon Save Manager
 APP_AUTHOR		:=	Inklay
 
-#ROMFS		:=	romfs
-#GFXBUILD	:=	$(ROMFS)/gfx
+ROMFS		:=	romfs
+GFXBUILD	:=	$(ROMFS)/gfx
 
 #---------------------------------------------------------------------------------
 # options for code generation
