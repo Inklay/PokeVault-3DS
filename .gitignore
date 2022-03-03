@@ -1,0 +1,7 @@
+.vs/
+build/
+Debug/
+Release/
+*.elf
+*.3dsx
+*.smdh

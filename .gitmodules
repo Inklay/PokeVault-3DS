@@ -1,0 +1,3 @@
+[submodule "core"]
+	path = source/core
+	url = https://github.com/Inklay/PokeVault-Core
