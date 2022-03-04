@@ -13,6 +13,10 @@ public:
 	void draw_circles(void);
 
 private:
+	void draw_info(void);
+	void draw_no_save_lines(void);
+	void draw_no_save_circles(void);
+
 	C2D_Font m_font;
 	C2D_Image m_image;
 };
