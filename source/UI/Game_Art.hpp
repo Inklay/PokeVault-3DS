@@ -4,6 +4,7 @@
 #include "./Button.hpp"
 #include <string>
 #include <citro2d.h>
+#include "./Arrow_Pointer.hpp"
 
 class Game_Art : public Button {
 public:
@@ -13,6 +14,9 @@ public:
 
 private:
 	C2D_Image m_image;
+	Arrow_Pointer m_pointer;
+	float m_pointer_off;
+	float m_pointer_dir;
 };
 
 #endif // !GAME_ART_HPP

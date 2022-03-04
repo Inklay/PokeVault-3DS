@@ -117,6 +117,12 @@
     <ClCompile Include="source\Game\current_game.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="source\UI\Arrow_Pointer.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\Arrow_Pointer.hpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\core\source\Save\Block\Box4.hpp">

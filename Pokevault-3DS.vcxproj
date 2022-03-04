@@ -131,10 +131,12 @@
     <ClCompile Include="source\scene\current_scene.hpp" />
     <ClCompile Include="source\scene\Game_Select.cpp" />
     <ClCompile Include="source\scene\background\Background.cpp" />
+    <ClCompile Include="source\UI\Arrow_Pointer.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
     <ClCompile Include="source\UI\Game_Info.cpp" />
     <ClCompile Include="source\UI\Game_Art.cpp" />
     <ClCompile Include="source\UI\Header.cpp" />
+    <ClCompile Include="source\UI\Arrow_Pointer.hpp" />
     <ClCompile Include="source\UI\Text.cpp" />
     <ClCompile Include="source\utils\Vec2.cpp" />
     <ClCompile Include="source\utils\Vec3.cpp" />
