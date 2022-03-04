@@ -1,9 +1,9 @@
 #include <3ds.h>
 #include <citro2d.h>
-#include "./UI/Game_Art.hpp"
+#include "./UI/UI_Element.hpp"
 #include <memory>
 #include <vector>
-#include <iostream>
+#include "./scene/scene.hpp"
 
 int main(int argc, char** argv) {
 	gfxInitDefault();
@@ -17,9 +17,8 @@ int main(int argc, char** argv) {
 
 	std::vector<std::unique_ptr<UI_Element>> elem;
 	const u32 color_clear = C2D_Color32(0x00, 0x00, 0x00, 0x00);
-	Vec3 pos1 = Vec3(100, 100, 0);
 
-	elem.emplace_back(std::make_unique<Game_Art>(pos1, "Platiunm", "Platinum.png"));
+	scene::game_select::load(elem);
 
 	while (aptMainLoop()) {
 		hidScanInput();

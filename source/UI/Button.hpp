@@ -14,7 +14,7 @@ public:
 	void draw_lines(void);
 	void draw_circles(void);
 
-private:
+protected:
 	u32 get_color(void);
 
 	bool m_is_selected;

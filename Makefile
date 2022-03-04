@@ -40,7 +40,8 @@ SOURCES			:=	source \
 					source/core/source/Save/Pkm \
 					source/core/source/utils \
 					source/utils \
-					source/UI
+					source/UI \
+					source/scene
 DATA			:=	data
 INCLUDES		:=	source \
 					source/core/source/Save \
@@ -49,7 +50,8 @@ INCLUDES		:=	source \
 					source/core/source/Save/Pkm \
 					source/core/source/utils \
 					source/utils \
-					source/UI
+					source/UI \
+					source/scene
 GRAPHICS		:=	gfx \
 					gfx/game_art
 

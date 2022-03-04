@@ -1,17 +1,19 @@
 #ifndef GAME_ART
 #define GAME_ART
 
-#include "./UI_Element.hpp"
+#include "./Button.hpp"
 #include <string>
 #include <citro2d.h>
 
-class Game_Art : public UI_Element {
+class Game_Art : public Button {
 public:
-	Game_Art(Vec3 pos, std::string name, std::string image_path);
+	Game_Art(Vec3 pos, std::string name, std::string image_path, C2D_SpriteSheet& sheet);
 	void draw_lines(void);
 	void draw_circles(void);
 
 private:
+	bool isCompatible(std::string name);
+
 	std::string m_game_name;
 	C2D_Image m_image;
 };

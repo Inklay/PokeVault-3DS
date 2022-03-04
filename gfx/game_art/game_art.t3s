@@ -1,2 +1,4 @@
--f auto-etc1 -z auto
+--atlas -f rgba -z auto
 Platinum.png
+Diamond.png
+Pearl.png
