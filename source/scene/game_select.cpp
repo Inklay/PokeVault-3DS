@@ -1,7 +1,6 @@
 #include "./scene.hpp"
 #include "../UI/Game_Art.hpp"
 #include "../UI/Header.hpp"
-#include "../UI/Background.hpp"
 #include "../Game/Game.hpp"
 #include "./Game_Select.hpp"
 
@@ -9,7 +8,6 @@ void Game_Select::load(std::vector<std::unique_ptr<UI_Element>>& top_elem,
 	std::vector<std::unique_ptr<UI_Element>>& bottom_elem) {
 	m_sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_art.t3x");
 
-	top_elem.emplace_back(std::make_unique<Background>(Background::Screen::TOP));
 	top_elem.emplace_back(std::make_unique<Header>("Choose a game to open"));
 
 	bool found_compatible_game = false;
@@ -26,8 +24,6 @@ void Game_Select::load(std::vector<std::unique_ptr<UI_Element>>& top_elem,
 		top_elem.emplace_back(std::make_unique<Game_Art>(Vec3(x, y, 0),
 			m_games[i].first, m_games[i].second, m_sheet, is_locked, is_selected));
 	}
-
-	bottom_elem.emplace_back(std::make_unique<Background>(Background::Screen::BOTTOM));
 }
 
 void Game_Select::unload(void) {

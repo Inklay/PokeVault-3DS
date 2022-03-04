@@ -42,6 +42,7 @@ SOURCES			:=	source \
 					source/utils \
 					source/UI \
 					source/scene \
+					source/scene/background \
 					source/Game
 DATA			:=	data
 INCLUDES		:=	source \
@@ -53,6 +54,7 @@ INCLUDES		:=	source \
 					source/utils \
 					source/UI \
 					source/scene \
+					source/scene/background \
 					source/Game
 GRAPHICS		:=	gfx \
 					gfx/game_art

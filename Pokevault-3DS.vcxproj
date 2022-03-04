@@ -120,7 +120,7 @@
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\scene\current_scene.hpp" />
     <ClCompile Include="source\scene\Game_Select.cpp" />
-    <ClCompile Include="source\UI\Background.cpp" />
+    <ClCompile Include="source\scene\background\Background.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
     <ClCompile Include="source\UI\Game_Art.cpp" />
     <ClCompile Include="source\UI\Header.cpp" />
@@ -142,7 +142,7 @@
     <ClInclude Include="source\Game\Game.hpp" />
     <ClInclude Include="source\scene\Game_Select.hpp" />
     <ClInclude Include="source\scene\Scene.hpp" />
-    <ClInclude Include="source\UI\Background.hpp" />
+    <ClInclude Include="source\scene\background\Background.hpp" />
     <ClInclude Include="source\UI\Button.hpp" />
     <ClInclude Include="source\UI\Colors.hpp" />
     <ClInclude Include="source\UI\Game_Art.hpp" />

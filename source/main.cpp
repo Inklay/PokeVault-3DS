@@ -4,6 +4,7 @@
 #include <memory>
 #include <vector>
 #include "./scene/current_scene.hpp"
+#include "./scene/background/Background.hpp"
 
 int main(int argc, char** argv) {
 	gfxInitDefault();
@@ -16,6 +17,7 @@ int main(int argc, char** argv) {
 	C3D_RenderTarget* bottom = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_LEFT);
 
 	const u32 color_clear = C2D_Color32(0x00, 0x00, 0x00, 0x00);
+	Background bg;
 
 	std::vector<std::unique_ptr<UI_Element>> top_elem;
 	std::vector<std::unique_ptr<UI_Element>> bottom_elem;
@@ -33,6 +35,7 @@ int main(int argc, char** argv) {
 		C2D_TargetClear(top, color_clear);
 		C2D_SceneBegin(top);
 
+		bg.update_top();
 		for (auto& e : top_elem)
 			e->draw_lines();
 		for (auto& e : top_elem)
@@ -41,6 +44,7 @@ int main(int argc, char** argv) {
 		C2D_TargetClear(bottom, color_clear);
 		C2D_SceneBegin(bottom);
 
+		bg.update_bottom();
 		for (auto& e : bottom_elem)
 			e->draw_lines();
 		for (auto& e : bottom_elem)

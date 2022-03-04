@@ -77,7 +77,7 @@
     <ClCompile Include="source\UI\Header.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\UI\Background.cpp">
+    <ClCompile Include="source\scene\background\Background.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="source\Game\Game.cpp">
@@ -148,7 +148,7 @@
     <ClInclude Include="source\UI\Header.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\UI\Background.hpp">
+    <ClInclude Include="source\scene\background\Background.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="source\Game\Game.hpp">
