@@ -4,36 +4,38 @@
 #include "../Game/Game.hpp"
 #include "../Game/all.hpp"
 #include "./Game_Select.hpp"
+#include "../UI/Game_Info.hpp"
+#include "../Game/current_game.hpp"
 
-void Game_Select::load(std::vector<std::unique_ptr<UI_Element>>& top_elem,
-	std::vector<std::unique_ptr<UI_Element>>& bottom_elem) {
+void Game_Select::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
+	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
 	m_sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_art.t3x");
-	const std::array<std::unique_ptr<Game>, 5> games = {
-		std::make_unique<SoulSilver>(),
-		std::make_unique<HeartGold>(),
-		std::make_unique<Platinum>(),
-		std::make_unique<Pearl>(),
-		std::make_unique<Diamond>()
-	};
+	m_font = C2D_FontLoad("romfs:/OpenSans-Regular.ttf");
 
-	top_elem.emplace_back(std::make_unique<Header>("Choose a game to open"));
+	top_elem.emplace_back(std::make_shared<Header>("Choose a game to open", m_font));
 
 	bool found_compatible_game = false;
 
-	for (size_t i = 0; i < games.size(); i++) {
+	for (size_t i = 0; i < game::games.size(); i++) {
 		int x = 24 + 94 * (i % 4);
 		int y = 30 + 24 + 94 * (i / 4);
-		bool is_locked = !Game::is_compatible(games[i]->get_version());
+		bool is_locked = !Game::is_compatible(game::games[i]->get_version());
 		bool is_selected = false;
 		if (!is_locked && !found_compatible_game) {
 			is_selected = true;
 			found_compatible_game = true;
+			game::idx = i;
 		}
-		top_elem.emplace_back(std::make_unique<Game_Art>(Vec3(x, y, 0),
-			games[i]->get_box_art(), m_sheet, is_locked, is_selected));
+		top_elem.emplace_back(std::make_shared<Game_Art>(Vec3(x, y, 0),
+			game::games[i]->get_box_art(), m_sheet, m_font, is_locked, is_selected));
+		if (is_selected) {
+			m_selected = std::dynamic_pointer_cast<Button>(top_elem.at(top_elem.size() - 1));
+		}
 	}
+	bottom_elem.emplace_back(std::make_shared<Game_Info>(m_font));
 }
 
 void Game_Select::unload(void) {
 	C2D_SpriteSheetFree(m_sheet);
+	C2D_FontFree(m_font);
 }

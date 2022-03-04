@@ -14,6 +14,8 @@ namespace colors {
 	static constexpr u32 background_top = C2D_Color32(0xA4, 0xD6, 0x6B, 0xFF);
 	static constexpr u32 background_middle = C2D_Color32(0x70, 0xAC, 0x65, 0xFF);
 	static constexpr u32 background_bottom= C2D_Color32(0x3B, 0x82, 0x5F, 0xFF);
+	static constexpr u32 title_background = C2D_Color32(0x09, 0x75, 0x63, 0xFF);
+	static constexpr u32 game_info_background = C2D_Color32(0x09, 0x75, 0x63, 0x30);
 }
 
 #endif // !COLORS

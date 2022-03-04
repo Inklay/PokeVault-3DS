@@ -2,8 +2,8 @@
 #include "../utils/SpriteSheet.hpp"
 #include "./Colors.hpp"
 
-Game_Art::Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, bool is_locked, bool is_selected) :
-Button(pos, Vec2(), "", is_locked, is_selected) {
+Game_Art::Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, C2D_Font font, bool is_locked, bool is_selected) :
+Button(pos, Vec2(), "", font, is_locked, is_selected) {
 	m_pos = pos;
 	const int idx = spritesheet::game_art.at(image_path);
 	m_image = C2D_SpriteSheetGetImage(sheet, idx);

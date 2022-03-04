@@ -10,7 +10,7 @@
 
 class Button : public UI_Element {
 public:
-	Button(Vec3 pos, Vec2 size, std::string text, bool locked = false, bool selected = false);
+	Button(Vec3 pos, Vec2 size, std::string text, C2D_Font font, bool locked = false, bool selected = false);
 	void draw_lines(void);
 	void draw_circles(void);
 

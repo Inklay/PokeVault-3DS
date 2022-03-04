@@ -2,8 +2,8 @@
 #include "./Colors.hpp"
 #include <3ds.h>
 
-Button::Button(Vec3 pos, Vec2 size, std::string text, bool locked, bool selected) :
-m_text(Text(pos, text)) {
+Button::Button(Vec3 pos, Vec2 size, std::string text, C2D_Font font, bool locked, bool selected) :
+m_text(Text(pos, text, font)) {
 	m_is_locked = locked;
 	m_is_selected = selected;
 	m_pos = pos;

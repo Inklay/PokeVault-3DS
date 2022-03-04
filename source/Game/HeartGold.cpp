@@ -1,10 +1,10 @@
-#include "./HeartGold.hpp"
+﻿#include "./HeartGold.hpp"
 #include "../config/Config.hpp"
 #include "../core/source/Save/Game/SavePL.hpp"
 
 HeartGold::HeartGold(void) {
 	m_has_save = config::current.heartgold_save_path == "none";
-	m_name = "Pok�mon Heart Gold Version";
+	m_name = "Pokémon Heart Gold Version";
 	m_box_art = "HeartGold.png";
 	m_logo = "HeartGold.png";
 	m_game = ASave::Game::HEARTGOLD;

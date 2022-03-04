@@ -9,6 +9,7 @@ int main(int argc, char** argv) {
 	C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
 	C2D_Init(C2D_DEFAULT_MAX_OBJECTS);
 	C2D_Prepare();
+	cfguInit();
 	romfsInit();
 	
 	C3D_RenderTarget* top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
@@ -17,8 +18,8 @@ int main(int argc, char** argv) {
 	const u32 color_clear = C2D_Color32(0x00, 0x00, 0x00, 0x00);
 	Background bg;
 
-	std::vector<std::unique_ptr<UI_Element>> top_elem;
-	std::vector<std::unique_ptr<UI_Element>> bottom_elem;
+	std::vector<std::shared_ptr<UI_Element>> top_elem;
+	std::vector<std::shared_ptr<UI_Element>> bottom_elem;
 
 	scene::current_scene->load(top_elem, bottom_elem);
 	srand(time(NULL));
@@ -53,6 +54,7 @@ int main(int argc, char** argv) {
 	}
 	scene::current_scene->unload();
 	romfsExit();
+	cfguExit();
 	C2D_Fini();
 	C3D_Fini();
 	gfxExit();

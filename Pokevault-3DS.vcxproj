@@ -118,6 +118,8 @@
     <ClCompile Include="source\core\source\Save\Pkm\Pk4.cpp" />
     <ClCompile Include="source\core\source\utils\utils.cpp" />
     <ClCompile Include="source\core\source\utils\utils4.cpp" />
+    <ClCompile Include="source\Game\current_game.cpp" />
+    <ClCompile Include="source\Game\current_game.hpp" />
     <ClCompile Include="source\Game\Diamond.cpp" />
     <ClCompile Include="source\Game\Game.cpp" />
     <ClCompile Include="source\Game\HeartGold.cpp" />

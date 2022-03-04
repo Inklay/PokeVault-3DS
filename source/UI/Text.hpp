@@ -8,7 +8,7 @@
 
 class Text : public UI_Element {
 public:
-	Text(Vec3 pos, std::string text);
+	Text(Vec3 pos, std::string text, C2D_Font font);
 	~Text(void);
 	void draw_lines(void);
 	void draw_lines(Vec2 size);
@@ -17,6 +17,7 @@ public:
 private:
 	C2D_Text m_text;
 	C2D_TextBuf m_text_buf;
+	C2D_Font m_font;
 };
 
 #endif // !TEXT_HPP

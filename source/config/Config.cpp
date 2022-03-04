@@ -1,4 +1,4 @@
-#include "./Config.hpp"
+﻿#include "./Config.hpp"
 
 Config::Config(void) {
 	mINI::INIFile file("sdmc:/3ds/Pokevault/config.ini");

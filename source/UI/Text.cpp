@@ -1,9 +1,9 @@
-#include "./Text.hpp"
+﻿#include "./Text.hpp"
 
-Text::Text(Vec3 pos, std::string text) {
+Text::Text(Vec3 pos, std::string text, C2D_Font font) {
 	m_pos = pos;
 	m_text_buf = C2D_TextBufNew(64);
-	C2D_TextParse(&m_text, m_text_buf, text.c_str());
+	C2D_TextFontParse(&m_text, font, m_text_buf, text.c_str());
 	C2D_TextOptimize(&m_text);
 }
 
