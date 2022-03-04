@@ -1,22 +1,32 @@
 #include "./scene.hpp"
 #include <citro2d.h>
 #include "../UI/Game_Art.hpp"
+#include "../UI/Header.hpp"
+#include <array>
+#include <utility>
 
 namespace scene {
 	namespace game_select{
 
 		static C2D_SpriteSheet sheet;
+		static const std::array<std::pair<std::string, std::string>, 5> games = {
+			std::pair<std::string, std::string>("Soul Silver" , "SoulSilver.png"),
+			std::pair<std::string, std::string>("Heart Gold" , "HeartGold.png"),
+			std::pair<std::string, std::string>("Platinum" , "Platinum.png"),
+			std::pair<std::string, std::string>("Pearl" , "Pearl.png"),
+			std::pair<std::string, std::string>("Diamond" , "Diamond.png"),
+		};
 
 		void load(std::vector<std::unique_ptr<UI_Element>>& elem) {
 			sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_art.t3x");
 
-			Vec3 pos1 = Vec3(20, 20, 0);
-			Vec3 pos2 = Vec3(100, 20, 0);
-			Vec3 pos3 = Vec3(180, 20, 0);
+			elem.emplace_back(std::make_unique<Header>("Choose a game to open"));
 
-			elem.emplace_back(std::make_unique<Game_Art>(pos1, "Platinum", "Platinum.png", sheet));
-			elem.emplace_back(std::make_unique<Game_Art>(pos2, "Pearl", "Pearl.png", sheet));
-			elem.emplace_back(std::make_unique<Game_Art>(pos3, "Diamond", "Diamond.png", sheet));
+			for (size_t i = 0; i < games.size(); i++) {
+				int x = 24 + 94 * (i % 4);
+				int y = 30 + 24 + 94 * (i / 4);
+				elem.emplace_back(std::make_unique<Game_Art>(Vec3(x, y, 0), games[i].first, games[i].second, sheet));
+			}
 		}
 
 		void unload(std::vector<std::unique_ptr<UI_Element>>& elem) {
