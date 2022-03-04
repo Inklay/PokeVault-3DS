@@ -4,11 +4,11 @@
 class Vec3 {
 public:
 	Vec3(void);
-	Vec3(int x, int y, int z);
+	Vec3(float x, float y, float z);
 
-	int x;
-	int y;
-	int z;
+	float x;
+	float y;
+	float z;
 };
 
 #endif // !VEC3

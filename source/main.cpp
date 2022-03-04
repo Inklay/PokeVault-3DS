@@ -5,6 +5,8 @@
 #include <vector>
 #include "./scene/current_scene.hpp"
 #include "./scene/background/Background.hpp"
+#include <cstdlib>
+#include <time.h>
 
 int main(int argc, char** argv) {
 	gfxInitDefault();
@@ -23,6 +25,7 @@ int main(int argc, char** argv) {
 	std::vector<std::unique_ptr<UI_Element>> bottom_elem;
 
 	scene::current_scene->load(top_elem, bottom_elem);
+	srand(time(NULL));
 
 	while (aptMainLoop()) {
 		hidScanInput();

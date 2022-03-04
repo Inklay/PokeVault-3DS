@@ -86,6 +86,9 @@
     <ClCompile Include="source\scene\current_scene.hpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="source\scene\background\Square.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\core\source\Save\Block\Box4.hpp">
@@ -157,9 +160,24 @@
     <ClInclude Include="source\scene\Game_Select.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="source\scene\background\Square.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="gfx\game_art\Platinum.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="gfx\game_art\Diamond.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="gfx\game_art\HeartGold.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="gfx\game_art\Pearl.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="gfx\game_art\SoulSilver.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
