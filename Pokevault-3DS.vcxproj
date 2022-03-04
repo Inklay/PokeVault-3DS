@@ -99,6 +99,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
+    <None Include="gfx\game_art\game_art.t3s" />
     <None Include="LICENSE" />
     <None Include="Makefile" />
     <None Include="README.md" />
@@ -138,8 +139,12 @@
     <ClInclude Include="source\UI\Game_Art.hpp" />
     <ClInclude Include="source\UI\Text.hpp" />
     <ClInclude Include="source\UI\UI_Element.hpp" />
+    <ClInclude Include="source\utils\SpriteSheet.hpp" />
     <ClInclude Include="source\utils\Vec2.hpp" />
     <ClInclude Include="source\utils\Vec3.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="gfx\game_art\Platinum.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

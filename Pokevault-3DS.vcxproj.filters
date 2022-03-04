@@ -20,6 +20,7 @@
     <None Include="LICENSE" />
     <None Include=".gitignore" />
     <None Include=".gitmodules" />
+    <None Include="gfx\game_art\game_art.t3s" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
@@ -123,5 +124,13 @@
     <ClInclude Include="source\UI\Colors.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="source\utils\SpriteSheet.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="gfx\game_art\Platinum.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>
