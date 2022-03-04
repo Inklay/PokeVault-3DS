@@ -2,6 +2,7 @@
 #include <citro2d.h>
 #include "../UI/Game_Art.hpp"
 #include "../UI/Header.hpp"
+#include "../UI/Background.hpp"
 #include <array>
 #include <utility>
 
@@ -20,6 +21,7 @@ namespace scene {
 		void load(std::vector<std::unique_ptr<UI_Element>>& elem) {
 			sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_art.t3x");
 
+			elem.emplace_back(std::make_unique<Background>(Background::Screen::TOP));
 			elem.emplace_back(std::make_unique<Header>("Choose a game to open"));
 
 			for (size_t i = 0; i < games.size(); i++) {
