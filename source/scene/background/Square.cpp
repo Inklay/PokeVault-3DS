@@ -16,14 +16,13 @@ void Background_Square::update_top(void) {
 	if (m_pos.y + m_size < 0)
 		m_done = true;
 	C2D_DrawRectSolid(m_pos.x, m_pos.y, m_pos.z, m_size, m_size, m_color);
-	m_pos.y -= m_speed;
 }
 
 void Background_Square::update_bottom(void) {
+	m_pos.y -= m_speed;
 	if (m_pos.y + m_size < 240)
 		return;
 	C2D_DrawRectSolid(m_pos.x - 40, m_pos.y - 240, m_pos.z, m_size, m_size, m_color);
-	m_pos.y -= m_speed;
 }
 
 bool Background_Square::is_done(void) {
