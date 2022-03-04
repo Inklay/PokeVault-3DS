@@ -14,7 +14,8 @@ public:
 	void unload(void);
 
 private:
-	C2D_SpriteSheet m_sheet;
+	C2D_SpriteSheet m_game_art_sheet;
+	C2D_SpriteSheet m_game_logo_sheet;
 	C2D_Font m_font;
 };
 

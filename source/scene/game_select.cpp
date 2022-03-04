@@ -9,7 +9,8 @@
 
 void Game_Select::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
-	m_sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_art.t3x");
+	m_game_art_sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_art.t3x");
+	m_game_logo_sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_logo.t3x");
 	m_font = C2D_FontLoad("romfs:/OpenSans-Regular.ttf");
 
 	top_elem.emplace_back(std::make_shared<Header>("Choose a game to open", m_font));
@@ -27,15 +28,16 @@ void Game_Select::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 			game::idx = i;
 		}
 		top_elem.emplace_back(std::make_shared<Game_Art>(Vec3(x, y, 0),
-			game::games[i]->get_box_art(), m_sheet, m_font, is_locked, is_selected));
+			game::games[i]->get_box_art(), m_game_art_sheet, m_font, is_locked, is_selected));
 		if (is_selected) {
 			m_selected = std::dynamic_pointer_cast<Button>(top_elem.at(top_elem.size() - 1));
 		}
 	}
-	bottom_elem.emplace_back(std::make_shared<Game_Info>(m_font));
+	bottom_elem.emplace_back(std::make_shared<Game_Info>(m_font, m_game_logo_sheet));
 }
 
 void Game_Select::unload(void) {
-	C2D_SpriteSheetFree(m_sheet);
+	C2D_SpriteSheetFree(m_game_art_sheet);
+	C2D_SpriteSheetFree(m_game_logo_sheet);
 	C2D_FontFree(m_font);
 }

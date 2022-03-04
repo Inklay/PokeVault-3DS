@@ -15,7 +15,7 @@ u32 Button::get_color(void) {
 		return colors::locked;
 	else if (m_is_selected)
 		return colors::selected;
-	return colors::base;
+	return colors::white;
 }
 
 void Button::draw_lines(void) {
