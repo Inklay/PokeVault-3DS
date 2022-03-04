@@ -6,12 +6,11 @@ Background::Background(Screen screen) {
 }
 
 void Background::draw_lines(void) {
-	int w;
-
 	if (m_screen == Screen::TOP)
-		w = 400;
+		C2D_DrawRectangle(0, 0, 0, 400, 240, colors::background_top, colors::background_top,
+			colors::background_middle, colors::background_middle);
 	else
-		w = 320;
-	C2D_DrawRectangle(0, 0, 0, w, 240, colors::background_top, colors::background_top,
-		colors::background_bottom, colors::background_bottom);
+		C2D_DrawRectangle(0, 0, 0, 320, 240, colors::background_middle, colors::background_middle,
+			colors::background_bottom, colors::background_bottom);
+	
 }
