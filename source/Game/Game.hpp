@@ -8,10 +8,18 @@
 class Game {
 public:
 	static bool is_compatible(std::string name);
-	//static void change_game(ASave::Game game);
+	bool has_save(void);
+	std::string get_name(void);
+	std::string get_box_art(void);
+	std::string get_logo(void);
+	virtual void save_init(void) = 0;
 
-private:
+protected:
 	static std::unique_ptr<ASave> m_save;
+	bool m_has_save;
+	std::string m_name;
+	std::string m_box_art;
+	std::string m_logo;
 };
 
 #endif // !GAME

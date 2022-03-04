@@ -100,12 +100,14 @@
   <ItemGroup>
     <None Include=".gitmodules" />
     <None Include="gfx\game_art\game_art.t3s" />
+    <None Include="gfx\game_logo\game_logo.t3s" />
     <None Include="LICENSE" />
     <None Include="Makefile" />
     <None Include="README.md" />
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\config\Config.cpp" />
     <ClCompile Include="source\core\source\Save\ASave.cpp" />
     <ClCompile Include="source\core\source\Save\ASave4.cpp" />
     <ClCompile Include="source\core\source\Save\Block\Box4.cpp" />
@@ -117,12 +119,14 @@
     <ClCompile Include="source\core\source\utils\utils.cpp" />
     <ClCompile Include="source\core\source\utils\utils4.cpp" />
     <ClCompile Include="source\Game\Game.cpp" />
+    <ClCompile Include="source\Game\Platinum.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\scene\background\Square.cpp" />
     <ClCompile Include="source\scene\current_scene.hpp" />
     <ClCompile Include="source\scene\Game_Select.cpp" />
     <ClCompile Include="source\scene\background\Background.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
+    <ClCompile Include="source\UI\Game_Info.cpp" />
     <ClCompile Include="source\UI\Game_Art.cpp" />
     <ClCompile Include="source\UI\Header.cpp" />
     <ClCompile Include="source\UI\Text.cpp" />
@@ -130,6 +134,7 @@
     <ClCompile Include="source\utils\Vec3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\config\Config.hpp" />
     <ClInclude Include="source\core\source\Save\ASave.hpp" />
     <ClInclude Include="source\core\source\Save\ASave4.hpp" />
     <ClInclude Include="source\core\source\Save\Block\Box4.hpp" />
@@ -141,12 +146,14 @@
     <ClInclude Include="source\core\source\utils\utils.hpp" />
     <ClInclude Include="source\core\source\utils\utils4.hpp" />
     <ClInclude Include="source\Game\Game.hpp" />
+    <ClInclude Include="source\Game\Platinum.hpp" />
     <ClInclude Include="source\scene\background\Square.hpp" />
     <ClInclude Include="source\scene\Game_Select.hpp" />
     <ClInclude Include="source\scene\Scene.hpp" />
     <ClInclude Include="source\scene\background\Background.hpp" />
     <ClInclude Include="source\UI\Button.hpp" />
     <ClInclude Include="source\UI\Colors.hpp" />
+    <ClInclude Include="source\UI\Game_Info.hpp" />
     <ClInclude Include="source\UI\Game_Art.hpp" />
     <ClInclude Include="source\UI\Header.hpp" />
     <ClInclude Include="source\UI\Text.hpp" />

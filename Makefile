@@ -43,7 +43,8 @@ SOURCES			:=	source \
 					source/UI \
 					source/scene \
 					source/scene/background \
-					source/Game
+					source/Game \
+					source/config
 DATA			:=	data
 INCLUDES		:=	source \
 					source/core/source/Save \
@@ -55,9 +56,11 @@ INCLUDES		:=	source \
 					source/UI \
 					source/scene \
 					source/scene/background \
-					source/Game
+					source/Game \
+					source/config
 GRAPHICS		:=	gfx \
-					gfx/game_art
+					gfx/game_art \
+					gfx/game_logo 
 
 APP_TITLE		:=	PokeVault
 APP_DESCRIPTION	:=	Pokemon Save Manager

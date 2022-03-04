@@ -1,11 +1,7 @@
 #include <3ds.h>
-#include <citro2d.h>
 #include "./UI/UI_Element.hpp"
-#include <memory>
-#include <vector>
 #include "./scene/current_scene.hpp"
 #include "./scene/background/Background.hpp"
-#include <cstdlib>
 #include <time.h>
 
 int main(int argc, char** argv) {
