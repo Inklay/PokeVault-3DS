@@ -12,5 +12,4 @@ void Background::draw_lines(void) {
 	else
 		C2D_DrawRectangle(0, 0, 0, 320, 240, colors::background_middle, colors::background_middle,
 			colors::background_bottom, colors::background_bottom);
-	
 }

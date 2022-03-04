@@ -3,7 +3,7 @@
 #include "./UI/UI_Element.hpp"
 #include <memory>
 #include <vector>
-#include "./scene/scene.hpp"
+#include "./scene/current_scene.hpp"
 
 int main(int argc, char** argv) {
 	gfxInitDefault();
@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
 
 	std::vector<std::unique_ptr<UI_Element>> top_elem;
 	std::vector<std::unique_ptr<UI_Element>> bottom_elem;
-	
-	scene::game_select::load(top_elem, bottom_elem);
+
+	scene::current_scene->load(top_elem, bottom_elem);
 
 	while (aptMainLoop()) {
 		hidScanInput();
@@ -48,6 +48,7 @@ int main(int argc, char** argv) {
 
 		C3D_FrameEnd(0);
 	}
+	scene::current_scene->unload();
 	romfsExit();
 	C2D_Fini();
 	C3D_Fini();

@@ -5,13 +5,11 @@
 #include <memory>
 #include "../UI/UI_Element.hpp"
 
-namespace scene {
-	namespace game_select {
-		void load(std::vector<std::unique_ptr<UI_Element>>& top_elem,
-			std::vector<std::unique_ptr<UI_Element>>& bottom_elem);
-		void unload(std::vector<std::unique_ptr<UI_Element>>& top_elem,
-			std::vector<std::unique_ptr<UI_Element>>& bottom_elem);
-	};
+class Scene {
+public:
+	virtual void load(std::vector<std::unique_ptr<UI_Element>>& top_elem,
+		std::vector<std::unique_ptr<UI_Element>>& bottom_elem) = 0;
+	virtual void unload(void) = 0;
 };
 
 #endif // !SCENES

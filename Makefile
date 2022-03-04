@@ -41,7 +41,8 @@ SOURCES			:=	source \
 					source/core/source/utils \
 					source/utils \
 					source/UI \
-					source/scene
+					source/scene \
+					source/Game
 DATA			:=	data
 INCLUDES		:=	source \
 					source/core/source/Save \
@@ -51,7 +52,8 @@ INCLUDES		:=	source \
 					source/core/source/utils \
 					source/utils \
 					source/UI \
-					source/scene
+					source/scene \
+					source/Game
 GRAPHICS		:=	gfx \
 					gfx/game_art
 

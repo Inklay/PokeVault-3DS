@@ -116,8 +116,10 @@
     <ClCompile Include="source\core\source\Save\Pkm\Pk4.cpp" />
     <ClCompile Include="source\core\source\utils\utils.cpp" />
     <ClCompile Include="source\core\source\utils\utils4.cpp" />
+    <ClCompile Include="source\Game\Game.cpp" />
     <ClCompile Include="source\main.cpp" />
-    <ClCompile Include="source\scene\game_select.cpp" />
+    <ClCompile Include="source\scene\current_scene.hpp" />
+    <ClCompile Include="source\scene\Game_Select.cpp" />
     <ClCompile Include="source\UI\Background.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
     <ClCompile Include="source\UI\Game_Art.cpp" />
@@ -137,7 +139,9 @@
     <ClInclude Include="source\core\source\Save\Pkm\Pk4.hpp" />
     <ClInclude Include="source\core\source\utils\utils.hpp" />
     <ClInclude Include="source\core\source\utils\utils4.hpp" />
-    <ClInclude Include="source\scene\scene.hpp" />
+    <ClInclude Include="source\Game\Game.hpp" />
+    <ClInclude Include="source\scene\Game_Select.hpp" />
+    <ClInclude Include="source\scene\Scene.hpp" />
     <ClInclude Include="source\UI\Background.hpp" />
     <ClInclude Include="source\UI\Button.hpp" />
     <ClInclude Include="source\UI\Colors.hpp" />

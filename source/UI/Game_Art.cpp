@@ -2,8 +2,8 @@
 #include "../utils/SpriteSheet.hpp"
 #include "./Colors.hpp"
 
-Game_Art::Game_Art(Vec3 pos, std::string name, std::string image_path, C2D_SpriteSheet& sheet) :
-Button(pos, Vec2(), "", isCompatible(name), false) {
+Game_Art::Game_Art(Vec3 pos, std::string name, std::string image_path, C2D_SpriteSheet& sheet, bool is_locked, bool is_selected) :
+Button(pos, Vec2(), "", is_locked, is_selected) {
 	m_pos = pos;
 	m_game_name = name;
 	const int idx = spritesheet::game_art.at(image_path);
@@ -25,8 +25,4 @@ void Game_Art::draw_circles(void) {
 	C2D_DrawCircleSolid(m_pos.x + 10, m_pos.y + 60, m_pos.z, 10, color);
 	C2D_DrawCircleSolid(m_pos.x + 60, m_pos.y + 60, m_pos.z, 10, color);
 	C2D_DrawImageAt(m_image, m_pos.x + 5, m_pos.y + 5, m_pos.z + 1, nullptr, 60.0F / 128.0f, 60.0F / 128.0f);
-}
-
-bool Game_Art::isCompatible(std::string name) {
-	return name != "Platinum";
 }
