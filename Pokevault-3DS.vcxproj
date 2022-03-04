@@ -118,8 +118,12 @@
     <ClCompile Include="source\core\source\Save\Pkm\Pk4.cpp" />
     <ClCompile Include="source\core\source\utils\utils.cpp" />
     <ClCompile Include="source\core\source\utils\utils4.cpp" />
+    <ClCompile Include="source\Game\Diamond.cpp" />
     <ClCompile Include="source\Game\Game.cpp" />
+    <ClCompile Include="source\Game\HeartGold.cpp" />
+    <ClCompile Include="source\Game\Pearl.cpp" />
     <ClCompile Include="source\Game\Platinum.cpp" />
+    <ClCompile Include="source\Game\SoulSilver.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\scene\background\Square.cpp" />
     <ClCompile Include="source\scene\current_scene.hpp" />
@@ -145,8 +149,13 @@
     <ClInclude Include="source\core\source\Save\Pkm\Pk4.hpp" />
     <ClInclude Include="source\core\source\utils\utils.hpp" />
     <ClInclude Include="source\core\source\utils\utils4.hpp" />
+    <ClInclude Include="source\Game\all.hpp" />
+    <ClInclude Include="source\Game\Diamond.hpp" />
     <ClInclude Include="source\Game\Game.hpp" />
+    <ClInclude Include="source\Game\HeartGold.hpp" />
+    <ClInclude Include="source\Game\Pearl.hpp" />
     <ClInclude Include="source\Game\Platinum.hpp" />
+    <ClInclude Include="source\Game\SoulSilver.hpp" />
     <ClInclude Include="source\scene\background\Square.hpp" />
     <ClInclude Include="source\scene\Game_Select.hpp" />
     <ClInclude Include="source\scene\Scene.hpp" />
@@ -168,6 +177,7 @@
     <Image Include="gfx\game_art\Pearl.png" />
     <Image Include="gfx\game_art\Platinum.png" />
     <Image Include="gfx\game_art\SoulSilver.png" />
+    <Image Include="gfx\game_logo\Platinum_EN.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

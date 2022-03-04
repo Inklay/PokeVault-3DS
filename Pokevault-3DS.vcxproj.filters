@@ -99,6 +99,18 @@
     <ClCompile Include="source\Game\Platinum.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="source\Game\Pearl.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Game\Diamond.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Game\HeartGold.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Game\SoulSilver.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\core\source\Save\Block\Box4.hpp">
@@ -182,6 +194,21 @@
     <ClInclude Include="source\Game\Platinum.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="source\Game\Pearl.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\Diamond.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\SoulSilver.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\HeartGold.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Game\all.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="gfx\game_art\Platinum.png">
@@ -197,6 +224,9 @@
       <Filter>Fichiers de ressources</Filter>
     </Image>
     <Image Include="gfx\game_art\SoulSilver.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="gfx\game_logo\Platinum_EN.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>

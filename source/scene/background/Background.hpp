@@ -1,5 +1,5 @@
-#ifndef BACKGROUND
-#define BACKGROUND
+#ifndef BACKGROUND_HPP
+#define BACKGROUND_HPP
 
 #include <citro2d.h>
 #include <vector>
@@ -16,4 +16,4 @@ private:
 	const std::vector<u32> m_colors;
 };
 
-#endif // !BACKGROUND
+#endif // !BACKGROUND_HPP

@@ -1,5 +1,5 @@
-#ifndef CURRENT_SCENE
-#define CURRENT_SCENE
+#ifndef CURRENT_SCENE_HPP
+#define CURRENT_SCENE_HPP
 
 #include "./Game_Select.hpp"
 
@@ -17,4 +17,4 @@ namespace scene {
 	}
 }
 
-#endif // !CURRENT_SCENE
+#endif // !CURRENT_SCENE_HPP

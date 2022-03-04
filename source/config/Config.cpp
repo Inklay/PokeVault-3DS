@@ -7,7 +7,11 @@ Config::Config(void) {
 	file.read(ini);
 
 	m_edited = false;
-	PL_save_path = load_key("save_location", "platinum", "none", ini);
+	soulsilver_save_path = load_key("save_location", "soulsilver", "none", ini);
+	heartgold_save_path = load_key("save_location", "heartgold", "none", ini);
+	platinum_save_path = load_key("save_location", "platinum", "none", ini);
+	pearl_save_path = load_key("save_location", "pearl", "none", ini);
+	diamond_save_path = load_key("save_location", "diamond", "none", ini);
 
 	if (m_edited)
 		file.write(ini);

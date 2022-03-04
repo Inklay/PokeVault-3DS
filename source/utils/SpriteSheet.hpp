@@ -1,5 +1,5 @@
-#ifndef SPRITESHEET
-#define SPRITESHEET
+#ifndef SPRITESHEET_HPP
+#define SPRITESHEET_HPP
 
 #include <map>
 #include <string>
@@ -18,4 +18,4 @@ namespace spritesheet {
     };
 };
 
-#endif // !SPRITESHEET
+#endif // !SPRITESHEET_HPP

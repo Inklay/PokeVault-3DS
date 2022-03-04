@@ -1,5 +1,5 @@
-#ifndef BACKGROUND_SQUARE
-#define BACKGROUND_SQUARE
+#ifndef BACKGROUND_SQUARE_HPP
+#define BACKGROUND_SQUARE_HPP
 
 #include "../../utils/Vec3.hpp"
 #include <citro2d.h>
@@ -20,4 +20,4 @@ private:
 	bool m_done;
 };
 
-#endif // !BACKGROUND_SQUARE
+#endif // !BACKGROUND_SQUARE_HPP

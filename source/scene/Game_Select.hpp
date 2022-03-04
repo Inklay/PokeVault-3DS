@@ -1,11 +1,11 @@
-#ifndef GAME_SELECT
-#define GAME_SELECT
+#ifndef GAME_SELECT_HPP
+#define GAME_SELECT_HPP
 
 #include "./Scene.hpp"
 #include <citro2d.h>
 #include <string>
 #include <array>
-#include <utility>
+#include "../Game/Game.hpp"
 
 class Game_Select : public Scene {
 public:
@@ -15,7 +15,6 @@ public:
 
 private:
 	C2D_SpriteSheet m_sheet;
-	static const std::array<std::pair<std::string, std::string>, 5> m_games;
 };
 
-#endif // !GAME_SELECT
+#endif // !GAME_SELECT_HPP

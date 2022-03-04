@@ -1,5 +1,5 @@
-#ifndef GAME_INFO
-#define GAME_INFO
+#ifndef GAME_INFO_HPP
+#define GAME_INFO_HPP
 
 #include "./UI_Element.hpp"
 
@@ -9,4 +9,4 @@ public:
 	void draw_circles(void);
 };
 
-#endif // !GAME_INFO
+#endif // !GAME_INFO_HPP

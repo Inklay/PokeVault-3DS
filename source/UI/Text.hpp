@@ -1,5 +1,5 @@
-#ifndef TEXT
-#define TEXT
+#ifndef TEXT_HPP
+#define TEXT_HPP
 
 #include <string>
 #include <citro2d.h>
@@ -19,4 +19,4 @@ private:
 	C2D_TextBuf m_text_buf;
 };
 
-#endif // !TEXT
+#endif // !TEXT_HPP

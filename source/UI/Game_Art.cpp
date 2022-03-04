@@ -2,10 +2,9 @@
 #include "../utils/SpriteSheet.hpp"
 #include "./Colors.hpp"
 
-Game_Art::Game_Art(Vec3 pos, std::string name, std::string image_path, C2D_SpriteSheet& sheet, bool is_locked, bool is_selected) :
+Game_Art::Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, bool is_locked, bool is_selected) :
 Button(pos, Vec2(), "", is_locked, is_selected) {
 	m_pos = pos;
-	m_game_name = name;
 	const int idx = spritesheet::game_art.at(image_path);
 	m_image = C2D_SpriteSheetGetImage(sheet, idx);
 }

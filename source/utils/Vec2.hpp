@@ -1,5 +1,5 @@
-#ifndef VEC2
-#define VEC2
+#ifndef VEC2_HPP
+#define VEC2_HPP
 
 class Vec2 {
 public:
@@ -10,4 +10,4 @@ public:
 	int y;
 };
 
-#endif // !VEC2
+#endif // !VEC2_HPP

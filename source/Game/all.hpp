@@ -1,0 +1,5 @@
+#include "./SoulSilver.hpp"
+#include "./HeartGold.hpp"
+#include "./Platinum.hpp"
+#include "./Pearl.hpp"
+#include "./Diamond.hpp"

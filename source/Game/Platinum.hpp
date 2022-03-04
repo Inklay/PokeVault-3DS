@@ -1,5 +1,5 @@
-#ifndef PLATINUM
-#define PLATINUM
+#ifndef PLATINUM_HPP
+#define PLATINUM_HPP
 
 #include "./Game.hpp"
 
@@ -9,4 +9,4 @@ public:
 	void save_init(void);
 };
 
-#endif // !PLATINUM
+#endif // !PLATINUM_HPP

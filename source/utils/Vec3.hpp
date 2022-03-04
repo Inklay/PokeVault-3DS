@@ -1,5 +1,5 @@
-#ifndef VEC3
-#define VEC3
+#ifndef VEC3_HPP
+#define VEC3_HPP
 
 class Vec3 {
 public:
@@ -11,4 +11,4 @@ public:
 	float z;
 };
 
-#endif // !VEC3
+#endif // !VEC3_HPP

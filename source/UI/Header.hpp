@@ -1,5 +1,5 @@
-#ifndef HEADER
-#define HEADER
+#ifndef HEADER_HPP
+#define HEADER_HPP
 
 #include "./Text.hpp"
 
@@ -13,4 +13,4 @@ private:
 	Text m_text;
 };
 
-#endif // !HEADER
+#endif // !HEADER_HPP

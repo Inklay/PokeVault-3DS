@@ -1,5 +1,5 @@
-#ifndef BUTTON
-#define BUTTON
+#ifndef BUTTON_HPP
+#define BUTTON_HPP
 
 #include "./UI_Element.hpp"
 #include <string>
@@ -23,4 +23,4 @@ protected:
 	Text m_text;
 };
 
-#endif // !BUTTON
+#endif // !BUTTON_HPP

@@ -1,5 +1,5 @@
-#ifndef UI_ELEMENT
-#define UI_ELEMENT
+#ifndef UI_ELEMENT_HPP
+#define UI_ELEMENT_HPP
 
 #include "../utils/Vec3.hpp"
 
@@ -12,4 +12,4 @@ protected:
 	Vec3 m_pos;
 };
 
-#endif // !UI_ELEMENT
+#endif // !UI_ELEMENT_HPP

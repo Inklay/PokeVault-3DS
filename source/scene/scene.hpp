@@ -1,5 +1,5 @@
-#ifndef SCENES
-#define SCENES
+#ifndef SCENES_HPP
+#define SCENES_HPP
 
 #include <vector>
 #include <memory>
@@ -12,4 +12,4 @@ public:
 	virtual void unload(void) = 0;
 };
 
-#endif // !SCENES
+#endif // !SCENES_HPP
