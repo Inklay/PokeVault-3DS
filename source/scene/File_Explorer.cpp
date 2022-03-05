@@ -73,7 +73,7 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 			} else {
 				try {
 					game::current()->set_save(m_entry.path().u8string());
-					//config::current.save();
+					config::current.save();
 					bottom_elem.emplace_back(std::make_unique<Popup>("Save successfully loaded !", "valid"));
 				} catch (...) {
 					bottom_elem.emplace_back(std::make_unique<Popup>("Invalid or corrupted save file !", "invalid"));

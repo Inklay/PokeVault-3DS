@@ -15,8 +15,8 @@ Platinum::Platinum(void) {
 }
 
 void Platinum::init_save(void) {
-	m_save = std::make_unique<SavePL>(config::current.platinum_save_path);
-	m_save->init(config::current.platinum_save_path);
+	save = std::make_unique<SavePL>(config::current.platinum_save_path);
+	save->init(config::current.platinum_save_path);
 }
 
 void Platinum::set_save(std::string path) {

@@ -18,10 +18,10 @@ public:
 	void open_save(void);
 	virtual void set_save(std::string path) = 0;
 	std::string get_file_extension(void);
+	std::unique_ptr<ASave> save;
 
 protected:
 	ASave::Game m_game;
-	std::unique_ptr<ASave> m_save;
 	bool m_has_save;
 	std::string m_name;
 	std::string m_box_art;

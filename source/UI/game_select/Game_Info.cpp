@@ -4,7 +4,15 @@
 #include "../../Game/current_game.hpp"
 #include "../../utils/SpriteSheet.hpp"
 
-Game_Info::Game_Info(C2D_SpriteSheet& sheet) {
+Game_Info::Game_Info(C2D_SpriteSheet& sheet) :
+m_game_name(Text(Vec3(20, 20, 0), game::current()->get_name(), colors::white)),
+m_name_label(Text(Vec3(165, 90, 0), "Name", colors::white)),
+m_name_value(Text(Vec3(235, 90, 0), game::current()->save->get_username())),
+m_tid_label(Text(Vec3(165, 112, 0), "ID Number", colors::white)),
+m_tid_value(Text(Vec3(235, 112, 0), std::to_string(game::current()->save->get_trainer_id()))),
+m_time_played_label(Text(Vec3(165, 134, 0), "Time played", colors::white)),
+m_time_played_value(Text(Vec3(235, 134, 0), game::current()->save->get_game_time())),
+m_no_save(Text(Vec3(160, 60, 0), "No save data\nfound, press \nto load one\nor insert\na cartridge")){
 	m_image.init(spritesheet::game_logo.at(game::current()->get_logo()), sheet);
 }
 
@@ -13,7 +21,7 @@ void Game_Info::draw_lines(void) {
 	C2D_DrawRectSolid(25, 20, 0, 270, 30, colors::title_background);
 	C2D_DrawRectSolid(20, 25, 0, 5, 25, colors::title_background);
 	C2D_DrawRectSolid(295, 25, 0, 5, 25, colors::title_background);
-	Text(Vec3(20, 20, 0), game::current()->get_name(), colors::white).draw_lines_centered_XY(Vec2(280, 30));
+	m_game_name.draw_lines_centered_XY(Vec2(280, 30));
 
 	// Game logo
 	m_image.draw_lines(Vec3(30, 50, 0), Vec2(1, 1));
@@ -28,15 +36,27 @@ void Game_Info::draw_lines(void) {
 }
 
 void Game_Info::draw_info(void) {
+	C2D_DrawRectSolid(160, 90, 0, 70, 20, colors::title_background);
+	C2D_DrawRectSolid(230, 90, 0, 60, 20, colors::white);
+	m_name_label.draw_lines_centered_XY(Vec2(60, 20), 0.4f);
+	m_name_value.draw_lines_centered_Y(20, 0.4f);
 
+	C2D_DrawRectSolid(160, 112, 0, 70, 20, colors::title_background);
+	C2D_DrawRectSolid(230, 112, 0, 60, 20, colors::white);
+	m_tid_label.draw_lines_centered_XY(Vec2(60, 20), 0.4f);
+	m_tid_value.draw_lines_centered_Y(20, 0.4f);
+
+	C2D_DrawRectSolid(160, 134, 0, 70, 20, colors::title_background);
+	C2D_DrawRectSolid(230, 134, 0, 60, 20, colors::white);
+	m_time_played_label.draw_lines_centered_XY(Vec2(60, 20), 0.4f);
+	m_time_played_value.draw_lines_centered_Y(20, 0.4f);
 }
 
 void Game_Info::draw_no_save_lines(void) {
 	C2D_DrawRectSolid(165, 60, 0, 120, 120, colors::info_background);
 	C2D_DrawRectSolid(160, 65, 0, 5, 110, colors::info_background);
 	C2D_DrawRectSolid(285, 65, 0, 5, 110, colors::info_background);
-	Text(Vec3(160, 60, 0), "No save data\nfound, press \nto load one\nor insert\na cartridge")
-		.draw_lines_centered_XY(Vec2(130, 120));
+	m_no_save.draw_lines_centered_XY(Vec2(130, 120));
 }
 
 

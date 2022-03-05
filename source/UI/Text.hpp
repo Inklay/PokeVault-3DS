@@ -17,9 +17,9 @@ public:
 	Text(Vec3 pos, std::string text, u32 color = colors::black);
 	~Text(void);
 	void draw_lines(void);
-	void draw_lines_centered_XY(Vec2 size);
-	void draw_lines_centered_Y(int y);
-	void draw_lines_centered_X(int y);
+	void draw_lines_centered_XY(Vec2 size, float font_size = 0.5f);
+	void draw_lines_centered_Y(int y, float font_size = 0.5f);
+	void draw_lines_centered_X(int x, float font_size = 0.5f);
 	void draw_circles(void);
 	void update(std::string text);
 

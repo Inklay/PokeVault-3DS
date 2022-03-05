@@ -2,10 +2,12 @@
 #define GAME_INFO_HPP
 
 #include "../UI_Element.hpp"
+#include "../Text.hpp"
 #include <memory>
 #include "../../Game/Game.hpp"
 #include <citro2d.h>
 #include "../Image.hpp"
+#include <vector>
 
 class Game_Info : public UI_Element {
 public:
@@ -18,6 +20,14 @@ private:
 	void draw_no_save_lines(void);
 	void draw_no_save_circles(void);
 
+	Text m_game_name;
+	Text m_name_label;
+	Text m_name_value;
+	Text m_tid_label;
+	Text m_tid_value;
+	Text m_time_played_label;
+	Text m_time_played_value;
+	Text m_no_save;
 	Image m_image;
 };
 
