@@ -13,6 +13,7 @@ Platinum::Platinum(void) {
 }
 
 void Platinum::save_init(void) {
+	m_has_save = config::current.platinum_save_path != "none";
 	if (m_has_save)
 		m_save = std::make_unique<SavePL>(config::current.platinum_save_path);
 	else

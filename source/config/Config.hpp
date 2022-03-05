@@ -7,6 +7,7 @@
 class Config {
 public:
 	Config();
+	void save(void);
 	std::string soulsilver_save_path;
 	std::string heartgold_save_path;
 	std::string platinum_save_path;
@@ -14,8 +15,10 @@ public:
 	std::string diamond_save_path;
 
 private:
-	std::string load_key(std::string section, std::string key, std::string default_value, mINI::INIStructure& ini);
+	std::string load_key(std::string section, std::string key, std::string default_value);
 	bool m_edited;
+	mINI::INIStructure m_ini;
+	mINI::INIFile m_file;
 };
 
 namespace config {

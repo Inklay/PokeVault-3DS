@@ -9,6 +9,8 @@
 #include <3ds.h>
 #include "../scene/Game_Select.hpp"
 #include "../UI/Box.hpp"
+#include "../config/Config.hpp"
+#include "../Game/current_game.hpp"
 
 void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
@@ -66,6 +68,10 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 			m_idx = 0;
 			std::shared_ptr<Footer> footer = std::dynamic_pointer_cast<Footer>(top_elem.at(2));
 			footer->update(m_current_path);
+		} else {
+			config::current.platinum_save_path = m_selected.path().u8string();
+			config::current.save();
+			game::current()->save_init();
 		}
 	}
 
