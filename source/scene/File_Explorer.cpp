@@ -22,8 +22,9 @@ void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	top_elem.emplace_back(std::make_shared<Header>("Opening save for " + game::current()->get_name()));
 	top_elem.emplace_back(std::make_shared<Image>(Vec3(136, 41, 0), Vec2(1, 1),
 		spritesheet::game_logo.at(game::current()->get_logo()), m_game_logo_sheet));
-	
-	bottom_elem.emplace_back(std::make_unique<Footer>(" select     back"));
+	top_elem.emplace_back(std::make_unique<Footer>(m_current_path, GFX_BOTTOM, Text::center_mode::BOTH));
+
+	bottom_elem.emplace_back(std::make_unique<Footer>(" select     back", GFX_BOTTOM, Text::center_mode::Y));
 	for (size_t i = 0; i < 4; i++) {
 		Vec3 pos = Vec3(30, 15 + 50 * i, 0);
 		bottom_elem.emplace_back(std::make_unique<File>(pos, "", i == 0));

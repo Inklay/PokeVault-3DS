@@ -9,6 +9,11 @@
 
 class Text : public UI_Element {
 public:
+	enum class center_mode {
+		BOTH,
+		X,
+		Y
+	};
 	Text(Vec3 pos, std::string text, u32 color = colors::black);
 	~Text(void);
 	void draw_lines(void);
