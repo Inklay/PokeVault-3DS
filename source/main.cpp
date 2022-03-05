@@ -9,6 +9,11 @@ namespace config {
 	Config current = Config();
 }
 
+namespace scene {
+	std::unique_ptr<Scene> current_scene = std::make_unique<Game_Select>();
+	bool load = false;
+}
+
 int main(int argc, char** argv) {
 	gfxInitDefault();
 	C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
@@ -37,6 +42,9 @@ int main(int argc, char** argv) {
 			break;
 		
 		scene::current_scene->update_inputs(key_down);
+
+		if (scene::load)
+			scene::current_scene->load(top_elem, bottom_elem);
 
 		C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
 		C2D_TargetClear(top, color_clear);

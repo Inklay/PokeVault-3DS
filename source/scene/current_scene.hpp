@@ -4,16 +4,14 @@
 #include "./Game_Select.hpp"
 
 namespace scene {
-	static std::unique_ptr<Scene> current_scene = std::make_unique<Game_Select>();
+	extern std::unique_ptr<Scene> current_scene;
+	extern bool load;
 
 	template<typename T>
-	void change_scene(Scene& new_scene, std::vector<std::shared_ptr<UI_Element>>& top_elem,
-		std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
+	void change_scene() {
 		current_scene->unload();
-		top_elem.clear();
-		bottom_elem.clear();
-		current_scene = std::make_unique<T>(new_scene);
-		current_scene->load(top_elem, bottom_elem);
+		current_scene = std::make_unique<T>();
+		load = true;
 	}
 }
 

@@ -4,6 +4,7 @@
 #include "../core/source/Save/ASave.hpp"
 #include <string>
 #include <memory>
+#include "../scene/current_scene.hpp"
 
 class Game {
 public:

@@ -6,9 +6,14 @@
 #include "./Game_Select.hpp"
 #include "../UI/game_select/Game_Info.hpp"
 #include "../Game/current_game.hpp"
+#include "./current_scene.hpp"
 
 void Game_Select::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
+	top_elem.clear();
+	bottom_elem.clear();
+	scene::load = false;
+
 	m_game_art_sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_art.t3x");
 	m_game_logo_sheet = C2D_SpriteSheetLoad("romfs:/gfx/game_logo.t3x");
 
