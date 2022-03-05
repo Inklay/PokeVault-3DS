@@ -5,8 +5,13 @@
 
 class Arrow_Pointer {
 public:
-	void draw_lines(Vec3 pos);
-	void draw_circles(Vec3 pos);
+	Arrow_Pointer(Vec3 pos);
+	void draw_lines(void);
+	void draw_circles(void);
+private:
+	float m_off;
+	float m_dir;
+	Vec3 m_pos;
 };
 
 #endif // !ARROW_POINTER_HPP

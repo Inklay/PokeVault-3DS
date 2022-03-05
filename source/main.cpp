@@ -5,6 +5,7 @@
 #include <time.h>
 #include "./config/Config.hpp"
 
+
 namespace config {
 	Config current = Config();
 }
@@ -41,7 +42,7 @@ int main(int argc, char** argv) {
 		if (key_down & KEY_START)
 			break;
 		
-		scene::current_scene->update(key_down);
+		scene::current_scene->update(top_elem, bottom_elem, key_down);
 
 		if (scene::load)
 			scene::current_scene->load(top_elem, bottom_elem);

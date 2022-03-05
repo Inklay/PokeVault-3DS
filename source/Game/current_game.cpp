@@ -9,7 +9,7 @@ namespace game {
 		std::make_shared<Diamond>()
 	};
 
-	size_t idx = 0;
+	size_t idx = 2;
 
 	std::shared_ptr<Game> current(void) {
 		return games[idx];

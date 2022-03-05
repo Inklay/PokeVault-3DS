@@ -39,4 +39,10 @@ void Text::draw_lines_centered_X(int x) {
 	C2D_DrawText(&m_text, C2D_WithColor, text_x, m_pos.y, m_pos.z + 1, 0.5f, 0.5f, m_color);
 }
 
+void Text::update(std::string text) {
+	C2D_TextBufClear(m_text_buf);
+	C2D_TextParse(&m_text, m_text_buf, text.c_str());
+	C2D_TextOptimize(&m_text);
+}
+
 void Text::draw_circles(void) {}

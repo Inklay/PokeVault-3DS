@@ -16,6 +16,7 @@ public:
 	void draw_lines_centered_Y(int y);
 	void draw_lines_centered_X(int y);
 	void draw_circles(void);
+	void update(std::string text);
 
 private:
 	C2D_Text m_text;

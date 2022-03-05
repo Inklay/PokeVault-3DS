@@ -35,7 +35,7 @@ void Game_Select::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 		top_elem.emplace_back(std::make_shared<Game_Art>(Vec3(x, y, 0),
 			game::games[i]->get_box_art(), m_game_art_sheet, button_func::choose_game, is_locked, is_selected));
 		if (is_selected) {
-			m_selected = std::dynamic_pointer_cast<Button>(top_elem.at(top_elem.size() - 1));
+			m_selected = std::dynamic_pointer_cast<Game_Art>(top_elem.at(top_elem.size() - 1));
 		}
 	}
 	bottom_elem.emplace_back(std::make_shared<Game_Info>(m_game_logo_sheet));
@@ -46,7 +46,8 @@ void Game_Select::unload(void) {
 	C2D_SpriteSheetFree(m_game_logo_sheet);
 }
 
-void Game_Select::update(u32 key_down) {
+void Game_Select::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
+	std::vector<std::shared_ptr<UI_Element>>& bottom_elem, u32 key_down) {
 	if (key_down & KEY_A)
 		m_selected->pressed();
 }
