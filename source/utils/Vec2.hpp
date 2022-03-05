@@ -4,10 +4,10 @@
 class Vec2 {
 public:
 	Vec2(void);
-	Vec2(int x, int y);
+	Vec2(float x, float y);
 
-	int x;
-	int y;
+	float x;
+	float y;
 };
 
 #endif // !VEC2_HPP

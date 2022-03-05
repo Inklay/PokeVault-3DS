@@ -5,8 +5,7 @@
 #include "../../utils/SpriteSheet.hpp"
 
 Game_Info::Game_Info(C2D_SpriteSheet& sheet) {
-	const int idx = spritesheet::game_logo.at(game::current()->get_logo());
-	m_image = C2D_SpriteSheetGetImage(sheet, idx);
+	m_image.init(spritesheet::game_logo.at(game::current()->get_logo()), sheet);
 }
 
 void Game_Info::draw_lines(void) {
@@ -17,7 +16,7 @@ void Game_Info::draw_lines(void) {
 	Text(Vec3(20, 20, 0), game::current()->get_name(), colors::white).draw_lines(Vec2(280, 30));
 
 	// Game logo
-	C2D_DrawImageAt(m_image, 30, 50, 0);
+	m_image.draw_lines(Vec3(30, 50, 0), Vec2(1, 1));
 
 	// Box
 	C2D_DrawRectSolid(20, 50, 0, 280, 170, colors::game_info_background);

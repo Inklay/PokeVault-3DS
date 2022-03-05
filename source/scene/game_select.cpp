@@ -7,6 +7,7 @@
 #include "../UI/game_select/Game_Info.hpp"
 #include "../Game/current_game.hpp"
 #include "./current_scene.hpp"
+#include <3ds.h>
 
 void Game_Select::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
@@ -46,5 +47,6 @@ void Game_Select::unload(void) {
 }
 
 void Game_Select::update_inputs(u32 key_down) {
-
+	if (key_down & KEY_A)
+		m_selected->pressed();
 }

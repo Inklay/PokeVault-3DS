@@ -5,6 +5,7 @@
 #include <memory>
 #include "../../Game/Game.hpp"
 #include <citro2d.h>
+#include "../Image.hpp"
 
 class Game_Info : public UI_Element {
 public:
@@ -17,7 +18,7 @@ private:
 	void draw_no_save_lines(void);
 	void draw_no_save_circles(void);
 
-	C2D_Image m_image;
+	Image m_image;
 };
 
 #endif // !GAME_INFO_HPP
