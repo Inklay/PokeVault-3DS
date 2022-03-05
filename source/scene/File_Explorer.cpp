@@ -3,13 +3,14 @@
 #include "../UI/Header.hpp"
 #include "../UI/Footer.hpp"
 #include "../UI/Image.hpp"
+#include "../UI/Popup.hpp"
 #include "../UI/file_explorer/File.hpp"
 #include "../Game/current_game.hpp"
 #include "../utils/SpriteSheet.hpp"
 #include <3ds.h>
 #include "../scene/Game_Select.hpp"
 #include "../UI/Box.hpp"
-#include "../utils/button_func.hpp"
+#include "../config/Config.hpp"
 
 void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
@@ -29,7 +30,7 @@ void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	bottom_elem.emplace_back(std::make_unique<Footer>(" select     back", GFX_BOTTOM, Text::center_mode::Y));
 	for (size_t i = 0; i < 4; i++) {
 		Vec3 pos = Vec3(30, 15 + 50 * i, 0);
-		bottom_elem.emplace_back(std::make_unique<File>(pos, "", i == 0, button_func::choose_save));
+		bottom_elem.emplace_back(std::make_unique<File>(pos, "", i == 0));
 	}
 	bottom_elem.emplace_back(std::make_unique<Box>(Vec3(30, 90, 0), Vec2(260, 60),
 		"No save found in this folder", colors::info_background, false));
@@ -69,9 +70,25 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 				m_idx = 0;
 				std::shared_ptr<Footer> footer = std::dynamic_pointer_cast<Footer>(top_elem.at(2));
 				footer->update(m_current_path);
+			} else {
+				try {
+					game::current()->set_save(m_entry.path().u8string());
+					//config::current.save();
+					bottom_elem.emplace_back(std::make_unique<Popup>("Save successfully loaded !", "valid"));
+				} catch (...) {
+					bottom_elem.emplace_back(std::make_unique<Popup>("Invalid or corrupted save file !", "invalid"));
+				}
+				update_selected(std::dynamic_pointer_cast<AButton>(bottom_elem.at(6)));
 			}
-			else
-				std::dynamic_pointer_cast<File>(m_selected)->press(m_entry.path().u8string());
+		} else if (m_selected->type == AButton::Type::POPUP) {
+			std::shared_ptr<Popup> popup = std::dynamic_pointer_cast<Popup>(bottom_elem.at(6));
+			if (popup->name == "valid") {
+				scene::change_scene<Game_Select>();
+				return;
+			} else if (popup->name == "invalid") {
+				bottom_elem.erase(bottom_elem.begin() + 6);
+				update_selected(std::dynamic_pointer_cast<AButton>(bottom_elem.at(1)));
+			}
 		}
 	}
 

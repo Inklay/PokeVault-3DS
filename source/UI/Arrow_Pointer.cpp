@@ -24,7 +24,7 @@ void Arrow_Pointer::draw_lines(void) {
 
 	C2D_DrawTriangle(x, m_pos.y, colors::arrow_pointer,
 		x, m_pos.y + 20, colors::arrow_pointer,
-		x + 10, m_pos.y + 10, colors::arrow_pointer, m_pos.z + 1);
+		x + 10, m_pos.y + 10, colors::arrow_pointer, m_pos.z + 0.1f);
 }
 
 void Arrow_Pointer::draw_circles(void) {

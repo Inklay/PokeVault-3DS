@@ -13,6 +13,7 @@ public:
 	virtual void unload(void) = 0;
 	virtual void update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 		std::vector<std::shared_ptr<UI_Element>>& bottom_elem, u32 key_down) = 0;
+	void update_selected(std::shared_ptr<AButton> selected);
 
 protected:
 	std::shared_ptr<AButton> m_selected;

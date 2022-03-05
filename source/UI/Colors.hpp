@@ -21,6 +21,7 @@ namespace colors {
 	static constexpr u32 arrow_pointer = C2D_Color32(0x41, 0x96, 0x74, 0xFF);
 	static constexpr u32 footer_top = C2D_Color32(0xA0, 0xD4, 0x64, 0xFF);
 	static constexpr u32 footer_bottom = C2D_Color32(0xC7, 0xE0, 0xA8, 0xFF);
+	static constexpr u32 popup_background = C2D_Color32(0xC9, 0xF5, 0xD4, 0xFF);
 }
 
 #endif // !COLORS

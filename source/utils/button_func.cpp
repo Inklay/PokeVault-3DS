@@ -6,9 +6,4 @@ namespace button_func {
 	void choose_game(void) {
 		game::current()->open_save();
 	}
-
-	void choose_save(std::string path) {
-		game::current()->set_save(path);
-		config::current.save();
-	}
 };

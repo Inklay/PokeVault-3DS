@@ -8,3 +8,7 @@ u32 AButton::get_color(void) {
 		return colors::selected;
 	return colors::white;
 }
+
+void AButton::set_selected(bool selected) {
+	m_is_selected = selected;
+}

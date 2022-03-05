@@ -5,7 +5,6 @@
 
 namespace button_func {
 	void choose_game(void);
-	void choose_save(std::string path);
 };
 
 #endif // !BUTTON_FUNC_HPP

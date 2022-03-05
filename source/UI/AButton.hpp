@@ -9,7 +9,7 @@ public:
 	enum class Type {
 		GAME_ART,
 		BUTTON,
-		POP_UP,
+		POPUP,
 		FILE
 	};
 
@@ -17,6 +17,7 @@ public:
 	virtual void draw_lines(void) = 0;
 	virtual void draw_circles(void) = 0;
 	Type type;
+	void set_selected(bool selected);
 
 protected:
 	bool m_is_selected;
