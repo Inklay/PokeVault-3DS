@@ -2,14 +2,15 @@
 #include "../Colors.hpp"
 #include "../../utils/SpriteSheet.hpp"
 
-Game_Art::Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, std::function<void(void)> func,
+Game_Art::Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, std::function<void(void)> press,
 	bool is_locked, bool is_selected) :
 m_pointer(Vec3(pos.x - 10, pos.y + 27, pos.z)) {
 	m_is_selected = is_selected;
 	m_is_locked = is_locked;
 	m_pos = pos;
 	m_image.init(spritesheet::game_art.at(image_path), sheet);
-	m_func = func;
+	this->press = press;
+	type = AButton::Type::GAME_ART;
 }
 
 void Game_Art::draw_lines(void) {
@@ -32,8 +33,4 @@ void Game_Art::draw_circles(void) {
 
 	if (m_is_selected)
 		m_pointer.draw_circles();
-}
-
-void Game_Art::pressed(void) {
-	m_func();
 }

@@ -14,7 +14,9 @@ public:
 	std::string get_box_art(void);
 	std::string get_logo(void);
 	ASave::Game get_version(void);
-	virtual void save_init(void) = 0;
+	virtual void init_save(void) = 0;
+	void open_save(void);
+	virtual void set_save(std::string path) = 0;
 	std::string get_file_extension(void);
 
 protected:

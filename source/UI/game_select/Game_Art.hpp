@@ -13,12 +13,11 @@ public:
 	Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, std::function<void(void)> func, bool is_locked, bool is_selected);
 	void draw_lines(void);
 	void draw_circles(void);
-	void pressed(void);
+	std::function<void(void)> press;
 
 private:
 	Image m_image;
 	Arrow_Pointer m_pointer;
-	std::function<void(void)> m_func;
 };
 
 #endif // !GAME_ART_HPP

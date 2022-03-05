@@ -49,5 +49,5 @@ void Game_Select::unload(void) {
 void Game_Select::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem, u32 key_down) {
 	if (key_down & KEY_A)
-		m_selected->pressed();
+		m_selected->press();
 }

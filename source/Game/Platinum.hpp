@@ -6,7 +6,8 @@
 class Platinum : public Game {
 public:
 	Platinum(void);
-	void save_init(void);
+	void init_save(void);
+	void set_save(std::string path);
 };
 
 #endif // !PLATINUM_HPP

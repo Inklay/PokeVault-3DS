@@ -10,12 +10,17 @@ Platinum::Platinum(void) {
 	m_logo = "Platinum_EN.png";
 	m_game = ASave::Game::PLATINUM;
 	m_file_extension = ".SAV";
+	if (m_has_save)
+		init_save();
 }
 
-void Platinum::save_init(void) {
-	m_has_save = config::current.platinum_save_path != "none";
-	if (m_has_save)
-		m_save = std::make_unique<SavePL>(config::current.platinum_save_path);
-	else
-		scene::change_scene<File_Explorer>();
+void Platinum::init_save(void) {
+	m_save = std::make_unique<SavePL>(config::current.platinum_save_path);
+	m_save->init(config::current.platinum_save_path);
+}
+
+void Platinum::set_save(std::string path) {
+	m_has_save = path != "none";
+	config::current.platinum_save_path = path;
+	init_save();
 }

@@ -16,7 +16,7 @@ public:
 private:
 	C2D_SpriteSheet m_game_logo_sheet;
 	std::string m_current_path;
-	std::filesystem::directory_entry m_selected;
+	std::filesystem::directory_entry m_entry;
 	size_t m_idx;
 };
 

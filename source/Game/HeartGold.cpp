@@ -10,6 +10,12 @@ HeartGold::HeartGold(void) {
 	m_game = ASave::Game::HEARTGOLD;
 }
 
-void HeartGold::save_init(void) {
-	//m_save = std::make_unique<SavePL>(config::current.PL_save_path);
+
+void HeartGold::init_save(void) {
+
+}
+
+void HeartGold::set_save(std::string path) {
+	m_has_save = path == "none";
+	config::current.heartgold_save_path = path;
 }

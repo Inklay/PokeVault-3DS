@@ -5,13 +5,15 @@
 #include <string>
 #include "../Text.hpp"
 #include "../Arrow_Pointer.hpp"
+#include <functional>
 
 class File : public AButton {
 public:
-	File(Vec3 pos, std::string text, bool selected);
+	File(Vec3 pos, std::string text, bool selected, std::function<void(std::string)> press);
 	void draw_lines(void);
 	void draw_circles(void);
 	void update(std::string text, bool visible);
+	std::function<void(std::string)> press;
 
 private:
 	Vec3 m_pos;

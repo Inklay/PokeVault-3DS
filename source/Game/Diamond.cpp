@@ -10,6 +10,12 @@ Diamond::Diamond(void) {
 	m_game = ASave::Game::DIAMOND;
 }
 
-void Diamond::save_init(void) {
-	//m_save = std::make_unique<SavePL>(config::current.PL_save_path);
+
+void Diamond::init_save(void) {
+
+}
+
+void Diamond::set_save(std::string path) {
+	m_has_save = path == "none";
+	config::current.diamond_save_path = path;
 }

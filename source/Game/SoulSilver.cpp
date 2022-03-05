@@ -10,6 +10,11 @@ SoulSilver::SoulSilver(void) {
 	m_game = ASave::Game::SOULSILVER;
 }
 
-void SoulSilver::save_init(void) {
-	//m_save = std::make_unique<SavePL>(config::current.platinum_save_path);
+void SoulSilver::init_save(void) {
+
+}
+
+void SoulSilver::set_save(std::string path) {
+	m_has_save = path == "none";
+	config::current.soulsilver_save_path = path;
 }

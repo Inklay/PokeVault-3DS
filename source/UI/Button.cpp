@@ -9,6 +9,7 @@ m_text(Text(pos, text)) {
 	m_pos = pos;
 	m_size = size;
 	m_func = func;
+	type = AButton::Type::BUTTON;
 }
 
 void Button::draw_lines(void) {

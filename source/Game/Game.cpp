@@ -1,4 +1,11 @@
 #include "./Game.hpp"
+#include "../scene/current_scene.hpp"
+#include "../scene/File_Explorer.hpp"
+
+void Game::open_save(void) {
+	if (!m_has_save)
+		scene::change_scene<File_Explorer>();
+}
 
 bool Game::has_save(void) {
 	return m_has_save;

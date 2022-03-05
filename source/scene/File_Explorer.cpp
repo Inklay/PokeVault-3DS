@@ -9,8 +9,7 @@
 #include <3ds.h>
 #include "../scene/Game_Select.hpp"
 #include "../UI/Box.hpp"
-#include "../config/Config.hpp"
-#include "../Game/current_game.hpp"
+#include "../utils/button_func.hpp"
 
 void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
@@ -30,10 +29,11 @@ void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	bottom_elem.emplace_back(std::make_unique<Footer>(" select     back", GFX_BOTTOM, Text::center_mode::Y));
 	for (size_t i = 0; i < 4; i++) {
 		Vec3 pos = Vec3(30, 15 + 50 * i, 0);
-		bottom_elem.emplace_back(std::make_unique<File>(pos, "", i == 0));
+		bottom_elem.emplace_back(std::make_unique<File>(pos, "", i == 0, button_func::choose_save));
 	}
 	bottom_elem.emplace_back(std::make_unique<Box>(Vec3(30, 90, 0), Vec2(260, 60),
 		"No save found in this folder", colors::info_background, false));
+	m_selected = std::dynamic_pointer_cast<AButton>(bottom_elem.at(1));
 	update(top_elem, bottom_elem, 0);
 }
 
@@ -61,17 +61,17 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	if (m_idx > 0 && (key_down & KEY_UP || key_down & KEY_CPAD_UP || key_down & KEY_CSTICK_UP || key_down & KEY_UP))
 		m_idx--;
 	if (key_down & KEY_A) {
-		if (m_selected.is_directory()) {
-			if (m_current_path != "sdmc:/")
-				m_current_path += "/";
-			m_current_path += m_selected.path().filename().u8string();
-			m_idx = 0;
-			std::shared_ptr<Footer> footer = std::dynamic_pointer_cast<Footer>(top_elem.at(2));
-			footer->update(m_current_path);
-		} else {
-			config::current.platinum_save_path = m_selected.path().u8string();
-			config::current.save();
-			game::current()->save_init();
+		if (m_selected->type == AButton::Type::FILE) {
+			if (m_entry.is_directory()) {
+				if (m_current_path != "sdmc:/")
+					m_current_path += "/";
+				m_current_path += m_entry.path().filename().u8string();
+				m_idx = 0;
+				std::shared_ptr<Footer> footer = std::dynamic_pointer_cast<Footer>(top_elem.at(2));
+				footer->update(m_current_path);
+			}
+			else
+				std::dynamic_pointer_cast<File>(m_selected)->press(m_entry.path().u8string());
 		}
 	}
 
@@ -84,7 +84,7 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 				found = true;
 			if (i < m_idx + 4 && i >= m_idx) {
 				if (vector_i == 0)
-					m_selected = entry;
+					m_entry = entry;
 				std::shared_ptr<File> file = std::dynamic_pointer_cast<File>(bottom_elem.at(vector_i + 1));
 				file->update(entry.path().filename().u8string(), true);
 				vector_i++;

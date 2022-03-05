@@ -1,12 +1,14 @@
 #include "./File.hpp"
 
-File::File(Vec3 pos, std::string text, bool selected) :
+File::File(Vec3 pos, std::string text, bool selected, std::function<void(std::string)> press) :
 m_text(Text(Vec3(pos.x + 20, pos.y, pos.z), text)),
 m_pointer(Vec3(pos.x - 10, pos.y + 10, pos.z)) {
 	m_pos = pos;
 	m_is_locked = false;
 	m_is_selected = selected;
 	m_visible = true;
+	type = AButton::Type::FILE;
+	this->press = press;
 }
 
 void File::draw_lines(void) {

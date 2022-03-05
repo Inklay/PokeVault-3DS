@@ -10,6 +10,12 @@ Pearl::Pearl(void) {
 	m_game = ASave::Game::PEARL;
 }
 
-void Pearl::save_init(void) {
-	//m_save = std::make_unique<SavePL>(config::current.PL_save_path);
+
+void Pearl::init_save(void) {
+
+}
+
+void Pearl::set_save(std::string path) {
+	m_has_save = path == "none";
+	config::current.pearl_save_path = path;
 }
