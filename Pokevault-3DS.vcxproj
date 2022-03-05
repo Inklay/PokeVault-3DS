@@ -132,6 +132,7 @@
     <ClCompile Include="source\UI\file_explorer\File.cpp" />
     <ClCompile Include="source\UI\Footer.cpp" />
     <ClCompile Include="source\UI\Image.cpp" />
+    <ClCompile Include="source\UI\Box.cpp" />
     <ClCompile Include="source\utils\button_func.cpp" />
     <ClCompile Include="source\scene\current_scene.hpp" />
     <ClCompile Include="source\scene\File_Explorer.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="source\UI\file_explorer\File.hpp" />
     <ClInclude Include="source\UI\Footer.hpp" />
     <ClInclude Include="source\UI\Image.hpp" />
+    <ClInclude Include="source\UI\Box.hpp" />
     <ClInclude Include="source\utils\button_func.hpp" />
     <ClInclude Include="source\scene\File_Explorer.hpp" />
     <ClInclude Include="source\scene\Game_Select.hpp" />
