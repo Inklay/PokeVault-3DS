@@ -13,7 +13,7 @@ void Game_Info::draw_lines(void) {
 	C2D_DrawRectSolid(25, 20, 0, 270, 30, colors::title_background);
 	C2D_DrawRectSolid(20, 25, 0, 5, 25, colors::title_background);
 	C2D_DrawRectSolid(295, 25, 0, 5, 25, colors::title_background);
-	Text(Vec3(20, 20, 0), game::current()->get_name(), colors::white).draw_lines(Vec2(280, 30));
+	Text(Vec3(20, 20, 0), game::current()->get_name(), colors::white).draw_lines_centered_XY(Vec2(280, 30));
 
 	// Game logo
 	m_image.draw_lines(Vec3(30, 50, 0), Vec2(1, 1));
@@ -35,7 +35,8 @@ void Game_Info::draw_no_save_lines(void) {
 	C2D_DrawRectSolid(165, 60, 0, 120, 120, colors::info_background);
 	C2D_DrawRectSolid(160, 65, 0, 5, 110, colors::info_background);
 	C2D_DrawRectSolid(285, 65, 0, 5, 110, colors::info_background);
-	Text(Vec3(160, 60, 0), "No save data\nfound, press \nto load one\nor insert\na cartridge").draw_lines(Vec2(130, 120));
+	Text(Vec3(160, 60, 0), "No save data\nfound, press \nto load one\nor insert\na cartridge")
+		.draw_lines_centered_XY(Vec2(130, 120));
 }
 
 

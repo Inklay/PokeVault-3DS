@@ -20,6 +20,11 @@ ASave::Game Game::get_version(void) {
 	return m_game;
 }
 
+std::string Game::get_file_extension(void) {
+
+	return m_file_extension;
+}
+
 bool Game::is_compatible(ASave::Game game_version) {
 	return game_version == ASave::Game::PLATINUM;
 }

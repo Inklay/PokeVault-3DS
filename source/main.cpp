@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 		if (key_down & KEY_START)
 			break;
 		
-		scene::current_scene->update_inputs(key_down);
+		scene::current_scene->update(key_down);
 
 		if (scene::load)
 			scene::current_scene->load(top_elem, bottom_elem);

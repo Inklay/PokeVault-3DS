@@ -46,7 +46,7 @@ void Game_Select::unload(void) {
 	C2D_SpriteSheetFree(m_game_logo_sheet);
 }
 
-void Game_Select::update_inputs(u32 key_down) {
+void Game_Select::update(u32 key_down) {
 	if (key_down & KEY_A)
 		m_selected->pressed();
 }

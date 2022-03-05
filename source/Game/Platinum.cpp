@@ -9,6 +9,7 @@ Platinum::Platinum(void) {
 	m_box_art = "Platinum.png";
 	m_logo = "Platinum_EN.png";
 	m_game = ASave::Game::PLATINUM;
+	m_file_extension = ".SAV";
 }
 
 void Platinum::save_init(void) {

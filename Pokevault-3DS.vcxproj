@@ -128,6 +128,9 @@
     <ClCompile Include="source\Game\SoulSilver.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\scene\background\Square.cpp" />
+    <ClCompile Include="source\UI\AButton.cpp" />
+    <ClCompile Include="source\UI\file_explorer\File.cpp" />
+    <ClCompile Include="source\UI\Footer.cpp" />
     <ClCompile Include="source\UI\Image.cpp" />
     <ClCompile Include="source\utils\button_func.cpp" />
     <ClCompile Include="source\scene\current_scene.hpp" />
@@ -164,6 +167,9 @@
     <ClInclude Include="source\Game\Platinum.hpp" />
     <ClInclude Include="source\Game\SoulSilver.hpp" />
     <ClInclude Include="source\scene\background\Square.hpp" />
+    <ClInclude Include="source\UI\AButton.hpp" />
+    <ClInclude Include="source\UI\file_explorer\File.hpp" />
+    <ClInclude Include="source\UI\Footer.hpp" />
     <ClInclude Include="source\UI\Image.hpp" />
     <ClInclude Include="source\utils\button_func.hpp" />
     <ClInclude Include="source\scene\File_Explorer.hpp" />

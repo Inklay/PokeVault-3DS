@@ -15,6 +15,7 @@ public:
 	std::string get_logo(void);
 	ASave::Game get_version(void);
 	virtual void save_init(void) = 0;
+	std::string get_file_extension(void);
 
 protected:
 	ASave::Game m_game;
@@ -23,6 +24,7 @@ protected:
 	std::string m_name;
 	std::string m_box_art;
 	std::string m_logo;
+	std::string m_file_extension;
 };
 
 #endif // !GAME_HPP
