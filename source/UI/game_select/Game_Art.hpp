@@ -1,14 +1,14 @@
 #ifndef GAME_ART_HPP
 #define GAME_ART_HPP
 
-#include "./Button.hpp"
+#include "../Button.hpp"
 #include <string>
 #include <citro2d.h>
-#include "./Arrow_Pointer.hpp"
+#include "../Arrow_Pointer.hpp"
 
 class Game_Art : public Button {
 public:
-	Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, C2D_Font font, bool is_locked, bool is_selected);
+	Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, std::function<void(void)> func, bool is_locked, bool is_selected);
 	void draw_lines(void);
 	void draw_circles(void);
 

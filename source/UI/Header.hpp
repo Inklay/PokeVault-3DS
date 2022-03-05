@@ -5,7 +5,7 @@
 
 class Header : public UI_Element {
 public:
-	Header(std::string text, C2D_Font font);
+	Header(std::string text);
 	void draw_lines(void);
 	void draw_circles(void) {}
 

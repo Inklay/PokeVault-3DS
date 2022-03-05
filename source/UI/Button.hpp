@@ -7,12 +7,14 @@
 #include "../utils/Vec2.hpp"
 #include <citro2d.h>
 #include "./Text.hpp"
+#include <functional>
 
 class Button : public UI_Element {
 public:
-	Button(Vec3 pos, Vec2 size, std::string text, C2D_Font font, bool locked = false, bool selected = false);
+	Button(Vec3 pos, Vec2 size, std::string text, std::function<void(void)> func, bool locked = false, bool selected = false);
 	void draw_lines(void);
 	void draw_circles(void);
+	void pressed(void);
 
 protected:
 	u32 get_color(void);
@@ -21,6 +23,7 @@ protected:
 	bool m_is_locked;
 	Vec2 m_size;
 	Text m_text;
+	std::function<void(void)> m_func;
 };
 
 #endif // !BUTTON_HPP

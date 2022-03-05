@@ -1,10 +1,12 @@
 ﻿#include "./Config.hpp"
+#include <filesystem>
 
 Config::Config(void) {
 	mINI::INIFile file("sdmc:/3ds/Pokevault/config.ini");
 	mINI::INIStructure ini;
 
-	file.read(ini);
+	if (!file.read(ini))
+		std::filesystem::create_directories("sdmc:/3ds/Pokevault");
 
 	m_edited = false;
 	soulsilver_save_path = load_key("save_location", "soulsilver", "none", ini);
@@ -17,7 +19,7 @@ Config::Config(void) {
 		file.write(ini);
 }
 
-std::string Config::load_key(std::string section, std::string key, std::string default_value, mINI::INIStructure ini) {
+std::string Config::load_key(std::string section, std::string key, std::string default_value, mINI::INIStructure& ini) {
 	if (ini.has(section)) {
 		if (ini[section].has(key))
 			return ini[section][key];
@@ -32,3 +34,4 @@ std::string Config::load_key(std::string section, std::string key, std::string d
 		return default_value;
 	}
 }
+

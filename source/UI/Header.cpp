@@ -1,8 +1,8 @@
 #include "./Header.hpp"
 #include "./Colors.hpp"
 
-Header::Header(std::string text, C2D_Font font) :
-m_text(Text(Vec3(), text, font)) {}
+Header::Header(std::string text) :
+m_text(Text(Vec3(), text)) {}
 
 void Header::draw_lines(void) {
 	C2D_DrawRectangle(0, 0, 0, 400, 30, colors::header_top, colors::header_top, colors::header_bottom, colors::header_bottom);

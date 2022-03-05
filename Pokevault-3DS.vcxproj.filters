@@ -69,7 +69,7 @@
     <ClCompile Include="source\UI\Text.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\UI\Game_Art.cpp">
+    <ClCompile Include="source\UI\game_select\Game_Art.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="source\scene\Game_Select.cpp">
@@ -90,7 +90,7 @@
     <ClCompile Include="source\scene\background\Square.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\UI\Game_Info.cpp">
+    <ClCompile Include="source\UI\game_select\Game_Info.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="source\config\Config.cpp">
@@ -121,6 +121,12 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\Arrow_Pointer.hpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scene\File_Explorer.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\utils\button_func.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -170,7 +176,7 @@
     <ClInclude Include="source\UI\Text.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\UI\Game_Art.hpp">
+    <ClInclude Include="source\UI\game_select\Game_Art.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\Colors.hpp">
@@ -197,7 +203,7 @@
     <ClInclude Include="source\scene\background\Square.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\UI\Game_Info.hpp">
+    <ClInclude Include="source\UI\game_select\Game_Info.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="source\config\Config.hpp">
@@ -219,6 +225,12 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="source\Game\all.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scene\File_Explorer.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="source\utils\button_func.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

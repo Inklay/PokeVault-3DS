@@ -1,10 +1,10 @@
 ﻿#include "./Text.hpp"
 
-Text::Text(Vec3 pos, std::string text, C2D_Font font, u32 color) {
+Text::Text(Vec3 pos, std::string text, u32 color) {
 	m_pos = pos;
 	m_text_buf = C2D_TextBufNew(64);
 	m_color = color;
-	C2D_TextFontParse(&m_text, font, m_text_buf, text.c_str());
+	C2D_TextParse(&m_text, m_text_buf, text.c_str());
 	C2D_TextOptimize(&m_text);
 }
 

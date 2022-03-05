@@ -3,6 +3,11 @@
 #include "./scene/current_scene.hpp"
 #include "./scene/background/Background.hpp"
 #include <time.h>
+#include "./config/Config.hpp"
+
+namespace config {
+	Config current = Config();
+}
 
 int main(int argc, char** argv) {
 	gfxInitDefault();
@@ -26,11 +31,13 @@ int main(int argc, char** argv) {
 
 	while (aptMainLoop()) {
 		hidScanInput();
-		u32 kDown = hidKeysDown();
+		u32 key_down = hidKeysDown();
 
-		if (kDown & KEY_START)
+		if (key_down & KEY_START)
 			break;
 		
+		scene::current_scene->update_inputs(key_down);
+
 		C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
 		C2D_TargetClear(top, color_clear);
 		C2D_SceneBegin(top);

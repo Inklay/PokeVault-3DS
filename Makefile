@@ -41,6 +41,7 @@ SOURCES			:=	source \
 					source/core/source/utils \
 					source/utils \
 					source/UI \
+					source/UI/game_select \
 					source/scene \
 					source/scene/background \
 					source/Game \
@@ -54,6 +55,7 @@ INCLUDES		:=	source \
 					source/core/source/utils \
 					source/utils \
 					source/UI \
+					source/UI/game_select \
 					source/scene \
 					source/scene/background \
 					source/Game \
