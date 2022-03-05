@@ -7,13 +7,18 @@
 Game_Info::Game_Info(C2D_SpriteSheet& sheet) :
 m_game_name(Text(Vec3(20, 20, 0), game::current()->get_name(), colors::white)),
 m_name_label(Text(Vec3(165, 90, 0), "Name", colors::white)),
-m_name_value(Text(Vec3(235, 90, 0), game::current()->save->get_username())),
+m_name_value(Text(Vec3(235, 90, 0), "")),
 m_tid_label(Text(Vec3(165, 112, 0), "ID Number", colors::white)),
-m_tid_value(Text(Vec3(235, 112, 0), std::to_string(game::current()->save->get_trainer_id()))),
+m_tid_value(Text(Vec3(235, 112, 0), "")),
 m_time_played_label(Text(Vec3(165, 134, 0), "Time played", colors::white)),
-m_time_played_value(Text(Vec3(235, 134, 0), game::current()->save->get_game_time())),
+m_time_played_value(Text(Vec3(235, 134, 0), "")),
 m_no_save(Text(Vec3(160, 60, 0), "No save data\nfound, press \nto load one\nor insert\na cartridge")){
 	m_image.init(spritesheet::game_logo.at(game::current()->get_logo()), sheet);
+	if (game::current()->has_save()) {
+		m_name_value.update(game::current()->save->get_username());
+		m_tid_value.update(std::to_string(game::current()->save->get_trainer_id()));
+		m_time_played_value.update(game::current()->save->get_game_time());
+	}
 }
 
 void Game_Info::draw_lines(void) {
