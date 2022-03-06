@@ -27,6 +27,8 @@ private:
 	Text m_tid_value;
 	Text m_time_played_label;
 	Text m_time_played_value;
+	Text m_caught_label;
+	Text m_caught_value;
 	Text m_no_save;
 	Image m_image;
 };

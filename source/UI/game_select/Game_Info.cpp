@@ -6,18 +6,21 @@
 
 Game_Info::Game_Info(C2D_SpriteSheet& sheet) :
 m_game_name(Text(Vec3(20, 20, -0.9f), game::current()->get_name(), colors::white)),
-m_name_label(Text(Vec3(165, 90, -0.9f), "Name", colors::white)),
-m_name_value(Text(Vec3(235, 90, -0.9f), "")),
-m_tid_label(Text(Vec3(165, 112, -0.9f), "ID Number", colors::white)),
-m_tid_value(Text(Vec3(235, 112, -0.9f), "")),
-m_time_played_label(Text(Vec3(165, 134, -0.9f), "Time played", colors::white)),
-m_time_played_value(Text(Vec3(235, 134, -0.9f), "")),
+m_name_label(Text(Vec3(165, 80, -0.9f), "Name", colors::white)),
+m_name_value(Text(Vec3(235, 80, -0.9f), "")),
+m_tid_label(Text(Vec3(165, 102, -0.9f), "ID Number", colors::white)),
+m_tid_value(Text(Vec3(235, 102, -0.9f), "")),
+m_time_played_label(Text(Vec3(165, 124, -0.9f), "Time played", colors::white)),
+m_time_played_value(Text(Vec3(235, 124, -0.9f), "")),
+m_caught_label(Text(Vec3(165, 146, -0.9f), "Pokédex", colors::white)),
+m_caught_value(Text(Vec3(235, 146, -0.9f), "")),
 m_no_save(Text(Vec3(160, 60, -0.9f), "No save data\nfound, press \nto load one\nor insert\na cartridge")){
 	m_image.init(spritesheet::game_logo.at(game::current()->get_logo()), sheet);
 	if (game::current()->has_save()) {
 		m_name_value.update(game::current()->save->get_username());
 		m_tid_value.update(std::to_string(game::current()->save->get_trainer_id()));
 		m_time_played_value.update(game::current()->save->get_game_time());
+		m_caught_value.update(std::to_string(game::current()->save->get_pokemon_caught()));
 	}
 }
 
@@ -41,20 +44,25 @@ void Game_Info::draw_lines(void) {
 }
 
 void Game_Info::draw_info(void) {
-	C2D_DrawRectSolid(160, 90, 0, 70, 20, colors::title_background);
-	C2D_DrawRectSolid(230, 90, 0, 60, 20, colors::white);
+	C2D_DrawRectSolid(160, 80, 0, 70, 20, colors::title_background);
+	C2D_DrawRectSolid(230, 80, 0, 60, 20, colors::white);
 	m_name_label.draw_lines_centered_XY(Vec2(60, 20), 0.4f);
 	m_name_value.draw_lines_centered_Y(20, 0.4f);
 
-	C2D_DrawRectSolid(160, 112, 0, 70, 20, colors::title_background);
-	C2D_DrawRectSolid(230, 112, 0, 60, 20, colors::white);
+	C2D_DrawRectSolid(160, 102, 0, 70, 20, colors::title_background);
+	C2D_DrawRectSolid(230, 102, 0, 60, 20, colors::white);
 	m_tid_label.draw_lines_centered_XY(Vec2(60, 20), 0.4f);
 	m_tid_value.draw_lines_centered_Y(20, 0.4f);
 
-	C2D_DrawRectSolid(160, 134, 0, 70, 20, colors::title_background);
-	C2D_DrawRectSolid(230, 134, 0, 60, 20, colors::white);
+	C2D_DrawRectSolid(160, 124, 0, 70, 20, colors::title_background);
+	C2D_DrawRectSolid(230, 124, 0, 60, 20, colors::white);
 	m_time_played_label.draw_lines_centered_XY(Vec2(60, 20), 0.4f);
 	m_time_played_value.draw_lines_centered_Y(20, 0.4f);
+
+	C2D_DrawRectSolid(160, 146, 0, 70, 20, colors::title_background);
+	C2D_DrawRectSolid(230, 146, 0, 60, 20, colors::white);
+	m_caught_label.draw_lines_centered_XY(Vec2(60, 20), 0.4f);
+	m_caught_value.draw_lines_centered_Y(20, 0.4f);
 }
 
 void Game_Info::draw_no_save_lines(void) {
