@@ -34,14 +34,31 @@ int main(int argc, char** argv) {
 
 	scene::current_scene->load(top_elem, bottom_elem);
 	srand(time(NULL));
+	size_t hold_timer = 0;
+	size_t hold_threshold = 20;
 
 	while (aptMainLoop()) {
 		hidScanInput();
 		u32 key_down = hidKeysDown();
+		u32 key_held = hidKeysHeld();
+		
+		if (hold_timer == hold_threshold) {
+			key_down = key_down | key_held;
+			hold_timer = 0;
+			if (hold_threshold != 10)
+				hold_threshold = 10;
+		}
 
 		if (key_down & KEY_START)
 			break;
 		
+		if (key_held != 0)
+			hold_timer++;
+		else if (hold_timer != 0) {
+			hold_timer = 0;
+			hold_threshold = 20;
+		}
+
 		scene::current_scene->update(top_elem, bottom_elem, key_down);
 
 		if (scene::load)
