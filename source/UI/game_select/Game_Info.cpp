@@ -5,14 +5,14 @@
 #include "../../utils/SpriteSheet.hpp"
 
 Game_Info::Game_Info(C2D_SpriteSheet& sheet) :
-m_game_name(Text(Vec3(20, 20, 0), game::current()->get_name(), colors::white)),
-m_name_label(Text(Vec3(165, 90, 0), "Name", colors::white)),
-m_name_value(Text(Vec3(235, 90, 0), "")),
-m_tid_label(Text(Vec3(165, 112, 0), "ID Number", colors::white)),
-m_tid_value(Text(Vec3(235, 112, 0), "")),
-m_time_played_label(Text(Vec3(165, 134, 0), "Time played", colors::white)),
-m_time_played_value(Text(Vec3(235, 134, 0), "")),
-m_no_save(Text(Vec3(160, 60, 0), "No save data\nfound, press \nto load one\nor insert\na cartridge")){
+m_game_name(Text(Vec3(20, 20, -0.9f), game::current()->get_name(), colors::white)),
+m_name_label(Text(Vec3(165, 90, -0.9f), "Name", colors::white)),
+m_name_value(Text(Vec3(235, 90, -0.9f), "")),
+m_tid_label(Text(Vec3(165, 112, -0.9f), "ID Number", colors::white)),
+m_tid_value(Text(Vec3(235, 112, -0.9f), "")),
+m_time_played_label(Text(Vec3(165, 134, -0.9f), "Time played", colors::white)),
+m_time_played_value(Text(Vec3(235, 134, -0.9f), "")),
+m_no_save(Text(Vec3(160, 60, -0.9f), "No save data\nfound, press \nto load one\nor insert\na cartridge")){
 	m_image.init(spritesheet::game_logo.at(game::current()->get_logo()), sheet);
 	if (game::current()->has_save()) {
 		m_name_value.update(game::current()->save->get_username());

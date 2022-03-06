@@ -9,7 +9,7 @@ m_pointer(Arrow_Pointer(Vec3(pos.x - 10, pos.y, pos.z + 0.1f))) {
 	m_is_selected = selected;
 	m_pos = pos;
 	m_size = size;
-	type = AButton::Type::BUTTON;
+	type = UI_Element::Type::BUTTON;
 }
 
 void Button::draw_lines(void) {

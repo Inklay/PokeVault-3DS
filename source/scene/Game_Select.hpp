@@ -19,7 +19,6 @@ public:
 private:
 	C2D_SpriteSheet m_game_art_sheet;
 	C2D_SpriteSheet m_game_logo_sheet;
-	std::shared_ptr<Game_Art> m_selected;
 };
 
 #endif // !GAME_SELECT_HPP

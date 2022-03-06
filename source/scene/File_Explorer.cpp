@@ -62,7 +62,7 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	if (m_idx > 0 && (key_down & KEY_UP || key_down & KEY_CPAD_UP || key_down & KEY_CSTICK_UP || key_down & KEY_UP))
 		m_idx--;
 	if (key_down & KEY_A) {
-		if (m_selected->type == AButton::Type::FILE) {
+		if (m_selected->type == UI_Element::Type::FILE) {
 			if (m_entry.is_directory()) {
 				if (m_current_path != "sdmc:/")
 					m_current_path += "/";
@@ -80,7 +80,7 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 				}
 				update_selected(std::dynamic_pointer_cast<AButton>(bottom_elem.at(6)));
 			}
-		} else if (m_selected->type == AButton::Type::POPUP) {
+		} else if (m_selected->type == UI_Element::Type::POPUP) {
 			std::shared_ptr<Popup> popup = std::dynamic_pointer_cast<Popup>(bottom_elem.at(6));
 			if (popup->name == "valid") {
 				scene::change_scene<Game_Select>();

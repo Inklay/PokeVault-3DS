@@ -4,7 +4,6 @@
 #include <vector>
 #include <memory>
 #include "../UI/AButton.hpp"
-#include "../utils/button_func.hpp"
 
 class Scene {
 public:
@@ -17,6 +16,7 @@ public:
 
 protected:
 	std::shared_ptr<AButton> m_selected;
+	std::shared_ptr<AButton> m_old_selected;
 };
 
 #endif // !SCENES_HPP

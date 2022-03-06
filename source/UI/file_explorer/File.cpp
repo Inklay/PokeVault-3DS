@@ -7,7 +7,7 @@ m_pointer(Vec3(pos.x - 10, pos.y + 10, pos.z)) {
 	m_is_locked = false;
 	m_is_selected = selected;
 	m_visible = true;
-	type = AButton::Type::FILE;
+	type = UI_Element::Type::FILE;
 }
 
 void File::draw_lines(void) {

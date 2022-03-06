@@ -5,8 +5,17 @@
 
 class UI_Element {
 public:
+	enum class Type {
+		GAME_ART,
+		BUTTON,
+		POPUP,
+		FILE,
+		OTHER
+	};
+
 	virtual void draw_lines(void) = 0;
 	virtual void draw_circles(void) = 0;
+	Type type = Type::OTHER;
 
 protected:
 	Vec3 m_pos;

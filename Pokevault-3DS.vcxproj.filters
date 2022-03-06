@@ -126,9 +126,6 @@
     <ClCompile Include="source\scene\File_Explorer.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\utils\button_func.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="source\UI\Image.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -249,9 +246,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="source\scene\File_Explorer.hpp">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="source\utils\button_func.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\Image.hpp">

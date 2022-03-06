@@ -6,14 +6,12 @@
 #include <citro2d.h>
 #include "../Arrow_Pointer.hpp"
 #include "../Image.hpp"
-#include <functional>
 
 class Game_Art : public AButton {
 public:
-	Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, std::function<void(void)> func, bool is_locked, bool is_selected);
+	Game_Art(Vec3 pos, std::string image_path, C2D_SpriteSheet& sheet, bool is_locked, bool is_selected);
 	void draw_lines(void);
 	void draw_circles(void);
-	std::function<void(void)> press;
 
 private:
 	Image m_image;

@@ -21,6 +21,7 @@ public:
 	std::unique_ptr<ASave> save;
 
 protected:
+	bool m_is_init;
 	ASave::Game m_game;
 	bool m_has_save;
 	std::string m_name;

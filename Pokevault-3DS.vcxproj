@@ -135,7 +135,6 @@
     <ClCompile Include="source\UI\Box.cpp" />
     <ClCompile Include="source\UI\Popup.cpp" />
     <ClCompile Include="source\scene\Scene.cpp" />
-    <ClCompile Include="source\utils\button_func.cpp" />
     <ClCompile Include="source\scene\current_scene.hpp" />
     <ClCompile Include="source\scene\File_Explorer.cpp" />
     <ClCompile Include="source\scene\Game_Select.cpp" />
@@ -176,7 +175,6 @@
     <ClInclude Include="source\UI\Image.hpp" />
     <ClInclude Include="source\UI\Box.hpp" />
     <ClInclude Include="source\UI\Popup.hpp" />
-    <ClInclude Include="source\utils\button_func.hpp" />
     <ClInclude Include="source\scene\File_Explorer.hpp" />
     <ClInclude Include="source\scene\Game_Select.hpp" />
     <ClInclude Include="source\scene\Scene.hpp" />
