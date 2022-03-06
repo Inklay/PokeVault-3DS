@@ -7,6 +7,9 @@ m_box(game::current()->save->get_current_box()) {
 
 void Box_View::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
+	top_elem.clear();
+	bottom_elem.clear();
+	scene::load = false;
 
 }
 
