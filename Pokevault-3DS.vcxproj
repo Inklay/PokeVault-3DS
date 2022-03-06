@@ -128,6 +128,8 @@
     <ClCompile Include="source\Game\SoulSilver.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\scene\background\Square.cpp" />
+    <ClCompile Include="source\scene\Box_View.cpp" />
+    <ClCompile Include="source\scene\Box_View.hpp" />
     <ClCompile Include="source\UI\AButton.cpp" />
     <ClCompile Include="source\UI\file_explorer\File.cpp" />
     <ClCompile Include="source\UI\Footer.cpp" />

@@ -38,6 +38,7 @@ SOURCES			:=	source \
 					source/core/source/Save/Block \
 					source/core/source/Save/Game \
 					source/core/source/Save/Pkm \
+					source/core/source/Save/Box \
 					source/core/source/utils \
 					source/utils \
 					source/UI \
@@ -53,6 +54,7 @@ INCLUDES		:=	source \
 					source/core/source/Save/Block \
 					source/core/source/Save/Game \
 					source/core/source/Save/Pkm \
+					source/core/source/Save/Box \
 					source/core/source/utils \
 					source/utils \
 					source/UI \
