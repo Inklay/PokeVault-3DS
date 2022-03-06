@@ -49,6 +49,12 @@ int main(int argc, char** argv) {
 				hold_threshold = 10;
 		}
 
+		// DEBUG ONLY, WILL BE REMOVED WHEN SHIPPING PUBLIC VERSION
+		if (key_down & KEY_L && key_down & KEY_R) {
+			config::current.platinum_save_path = "none";
+			config::current.save();
+		}
+
 		if (key_down & KEY_START)
 			break;
 		

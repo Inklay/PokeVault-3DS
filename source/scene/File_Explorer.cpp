@@ -95,8 +95,10 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	size_t i = 0;
 	size_t vector_i = 0;
 	bool found = false;
+	std::filesystem::directory_entry last;
 	for (const auto& entry : std::filesystem::directory_iterator(m_current_path)) {
 		if (entry.is_directory() || entry.path().extension() == game::current()->get_file_extension()) {
+			last = entry;
 			if (!found)
 				found = true;
 			if (i < m_idx + 4 && i >= m_idx) {
@@ -111,7 +113,9 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	}
 	if (found && vector_i == 0) {
 		m_idx--;
-		update(top_elem, bottom_elem, 0);
+		std::shared_ptr<File> file = std::dynamic_pointer_cast<File>(bottom_elem.at(vector_i + 1));
+		file->update(last.path().filename().u8string(), true);
+		vector_i++;
 	}
 	for (; vector_i < 4; vector_i++) {
 		std::shared_ptr<File> file = std::dynamic_pointer_cast<File>(bottom_elem.at(vector_i + 1));
