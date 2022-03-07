@@ -44,6 +44,7 @@ SOURCES			:=	source \
 					source/UI \
 					source/UI/game_select \
 					source/UI/file_explorer \
+					source/UI/box_view \
 					source/scene \
 					source/scene/background \
 					source/Game \
@@ -60,6 +61,7 @@ INCLUDES		:=	source \
 					source/UI \
 					source/UI/game_select \
 					source/UI/file_explorer \
+					source/UI/box_view \
 					source/scene \
 					source/scene/background \
 					source/Game \

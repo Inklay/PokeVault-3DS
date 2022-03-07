@@ -138,7 +138,7 @@
     <ClCompile Include="source\UI\Footer.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\UI\Box.cpp">
+    <ClCompile Include="source\UI\Text_Box.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="source\UI\Popup.cpp">
@@ -151,6 +151,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="source\scene\Box_View.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\box_view\Box.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -266,10 +269,13 @@
     <ClInclude Include="source\UI\Footer.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\UI\Box.hpp">
+    <ClInclude Include="source\UI\Text_Box.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="source\UI\Popup.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\box_view\Box.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

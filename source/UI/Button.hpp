@@ -12,6 +12,8 @@
 class Button : public AButton {
 public:
 	Button(Vec3 pos, Vec2 size, std::string text, bool locked = false, bool selected = false);
+	//Button(std::string text, bool locked = false, bool selected = false);
+	//void init(Vec3 pos, Vec2 size);
 	void draw_lines(void);
 	void draw_circles(void);
 

@@ -9,7 +9,7 @@
 #include "../utils/SpriteSheet.hpp"
 #include <3ds.h>
 #include "../scene/Game_Select.hpp"
-#include "../UI/Box.hpp"
+#include "../UI/Text_Box.hpp"
 #include "../config/Config.hpp"
 
 void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
@@ -32,7 +32,7 @@ void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 		Vec3 pos = Vec3(30, 15 + 50 * i, 0);
 		bottom_elem.emplace_back(std::make_unique<File>(pos, "", i == 0));
 	}
-	bottom_elem.emplace_back(std::make_unique<Box>(Vec3(30, 90, 0), Vec2(260, 60),
+	bottom_elem.emplace_back(std::make_unique<Text_Box>(Vec3(30, 90, 0), Vec2(260, 60),
 		"No save found in this folder", colors::info_background, false));
 	m_selected = std::dynamic_pointer_cast<AButton>(bottom_elem.at(1));
 	update(top_elem, bottom_elem, 0);
@@ -121,6 +121,6 @@ void File_Explorer::update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 		std::shared_ptr<File> file = std::dynamic_pointer_cast<File>(bottom_elem.at(vector_i + 1));
 		file->update("", false);
 	}
-	std::shared_ptr<Box> box = std::dynamic_pointer_cast<Box>(bottom_elem.at(5));
+	std::shared_ptr<Text_Box> box = std::dynamic_pointer_cast<Text_Box>(bottom_elem.at(5));
 	box->update(!found);
 }

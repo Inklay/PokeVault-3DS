@@ -1,5 +1,6 @@
 #include "./Box_View.hpp"
 #include "../Game/current_game.hpp"
+#include "../UI/box_view/Box.hpp"
 
 Box_View::Box_View(void) :
 m_box(game::current()->save->get_current_box()) {
@@ -11,6 +12,9 @@ std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
 	bottom_elem.clear();
 	scene::load = false;
 
+	top_elem.emplace_back(std::make_shared<Box>(true, game::current()->save->get_current_box(), GFX_TOP));
+
+	bottom_elem.emplace_back(std::make_shared<Box>(false, game::current()->save->get_current_box(), GFX_BOTTOM));
 }
 
 void Box_View::unload(void) {

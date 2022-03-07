@@ -22,6 +22,8 @@ namespace colors {
 	static constexpr u32 footer_top = C2D_Color32(0xA0, 0xD4, 0x64, 0xFF);
 	static constexpr u32 footer_bottom = C2D_Color32(0xC7, 0xE0, 0xA8, 0xFF);
 	static constexpr u32 popup_background = C2D_Color32(0xC9, 0xF5, 0xD4, 0xFF);
+	static constexpr u32 title_unselected_background = C2D_Color32(0x8F, 0xC9, 0x9C, 0xFF);
+	static constexpr u32 box_unselected_background = C2D_Color32(0xD5, 0xF5, 0xDC, 0xFF);
 }
 
 #endif // !COLORS

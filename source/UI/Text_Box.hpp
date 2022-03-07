@@ -1,5 +1,5 @@
-#ifndef INFO_BOX_HPP
-#define INFO_BOX_HPP
+#ifndef TEXT_BOX_HPP
+#define TEXT_BOX_HPP
 
 #include "./UI_Element.hpp"
 #include "../utils/Vec3.hpp"
@@ -7,9 +7,9 @@
 #include <string>
 #include "./Text.hpp"
 
-class Box : public UI_Element {
+class Text_Box : public UI_Element {
 public:
-	Box(Vec3 pos, Vec2 size, std::string text, u32 color, bool visible = true);
+	Text_Box(Vec3 pos, Vec2 size, std::string text, u32 color, bool visible = true);
 	void draw_lines(void);
 	void draw_circles(void);
 	void update(bool visible);
@@ -22,4 +22,4 @@ private:
 	u32 m_color;
 };
 
-#endif // !INFO_BOX_HPP
+#endif // !TEXT_BOX_HPP
