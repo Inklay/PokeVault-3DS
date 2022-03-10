@@ -4,11 +4,12 @@
 #include "../scene/Box_View.hpp"
 
 void Game::open_save(void) {
-	save->load();
 	if (!m_has_save)
 		scene::change_scene<File_Explorer>();
-	else
+	else {
+		save->load();
 		scene::change_scene<Box_View>();
+	}
 }
 
 bool Game::has_save(void) {
