@@ -12,6 +12,10 @@
 #include "../UI/Text_Box.hpp"
 #include "../config/Config.hpp"
 
+File_Explorer::File_Explorer(void) {
+	m_name = "File Explorer";
+}
+
 void File_Explorer::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
 	top_elem.clear();

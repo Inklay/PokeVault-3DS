@@ -4,6 +4,7 @@
 
 Box_View::Box_View(void) :
 m_box(game::current()->save->get_current_box()) {
+	m_name = "Box View";
 }
 
 void Box_View::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,

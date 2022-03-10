@@ -7,6 +7,7 @@
 
 class File_Explorer : public Scene {
 public:
+	File_Explorer(void);
 	void load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 		std::vector<std::shared_ptr<UI_Element>>& bottom_elem);
 	void unload(void);

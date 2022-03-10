@@ -10,6 +10,10 @@
 #include "./current_scene.hpp"
 #include <3ds.h>
 
+Game_Select::Game_Select(void) {
+	m_name = "Game Select";
+}
+
 void Game_Select::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 	std::vector<std::shared_ptr<UI_Element>>& bottom_elem) {
 	top_elem.clear();

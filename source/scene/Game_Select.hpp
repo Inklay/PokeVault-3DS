@@ -10,6 +10,7 @@
 
 class Game_Select : public Scene {
 public:
+	Game_Select(void);
 	void load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
 		std::vector<std::shared_ptr<UI_Element>>& bottom_elem);
 	void unload(void);
