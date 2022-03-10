@@ -132,6 +132,7 @@
     <ClCompile Include="source\scene\Box_View.hpp" />
     <ClCompile Include="source\UI\AButton.cpp" />
     <ClCompile Include="source\UI\box_view\Box.cpp" />
+    <ClCompile Include="source\UI\box_view\Box_Header.cpp" />
     <ClCompile Include="source\UI\file_explorer\File.cpp" />
     <ClCompile Include="source\UI\Footer.cpp" />
     <ClCompile Include="source\UI\Image.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="source\scene\background\Square.hpp" />
     <ClInclude Include="source\UI\AButton.hpp" />
     <ClInclude Include="source\UI\box_view\Box.hpp" />
+    <ClInclude Include="source\UI\box_view\Box_header.hpp" />
     <ClInclude Include="source\UI\file_explorer\File.hpp" />
     <ClInclude Include="source\UI\Footer.hpp" />
     <ClInclude Include="source\UI\Image.hpp" />

@@ -5,6 +5,7 @@
 #include "../Button.hpp"
 #include "../../core/source/Save/Box/Base_Box.hpp"
 #include <3ds.h>
+#include "./Box_header.hpp"
 
 class Box : public UI_Element {
 public:
@@ -17,7 +18,7 @@ private:
 	Base_Box& m_box;
 	bool m_is_selected;
 	int m_x_fix;
-	Button m_box_name;
+	Box_Header m_header;
 };
 
 #endif // !BOX_HPP
