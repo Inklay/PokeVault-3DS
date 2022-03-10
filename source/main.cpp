@@ -5,7 +5,6 @@
 #include <time.h>
 #include "./config/Config.hpp"
 
-
 namespace config {
 	Config current = Config();
 }
@@ -55,7 +54,7 @@ int main(int argc, char** argv) {
 			config::current.save();
 		}
 
-		if (key_down & KEY_START)
+		if (key_down & KEY_START && scene::current_scene->get_name() != "Box View")
 			break;
 		
 		if (key_held != 0)
