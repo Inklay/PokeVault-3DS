@@ -68,7 +68,8 @@ INCLUDES		:=	source \
 					source/config
 GRAPHICS		:=	gfx \
 					gfx/game_art \
-					gfx/game_logo 
+					gfx/game_logo \
+					gfx/pkm
 
 APP_TITLE		:=	PokeVault
 APP_DESCRIPTION	:=	Pokémon Save Manager
