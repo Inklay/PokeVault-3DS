@@ -15,6 +15,7 @@ public:
 
 private:
 	Base_Box& m_box;
+	std::vector<C2D_SpriteSheet> m_spritesheets;
 };
 
 #endif // !BOX_VIEW

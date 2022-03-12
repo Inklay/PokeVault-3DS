@@ -1,0 +1,3 @@
+--atlas -f rgba -z auto
+regular/256.png
+shiny/256.png
