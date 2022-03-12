@@ -2,6 +2,7 @@
 #include "../Game/current_game.hpp"
 #include "../UI/box_view/Box.hpp"
 #include "../scene/Game_Select.hpp"
+#include "../utils/SpriteSheet.hpp"
 
 Box_View::Box_View(void) :
 m_box(game::current()->save->get_current_box()) {
