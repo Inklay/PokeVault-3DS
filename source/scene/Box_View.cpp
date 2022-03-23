@@ -8,11 +8,6 @@
 Box_View::Box_View(void) :
 m_box(game::current()->save->get_current_box()) {
 	m_name = "Box View";
-	/*for (size_t i = 0; i < 14; i++) {
-		std::stringstream ss;
-		ss << "romfs:/gfx/pkm_" << i << ".t3x";
-		m_spritesheets.emplace_back(C2D_SpriteSheetLoad(ss.str().c_str()));
-	}*/
 }
 
 void Box_View::load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
