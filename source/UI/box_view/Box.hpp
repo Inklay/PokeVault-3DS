@@ -11,15 +11,15 @@
 
 class Box : public UI_Element {
 public:
-	Box(bool selected, Base_Box& box, gfxScreen_t screen);
+	Box(bool selected, Base_Box box, gfxScreen_t screen);
 	void draw_lines(void);
 	void draw_circles(void);
-	void update(bool selected, Base_Box& box);
+	void update(bool selected, Base_Box box);
 
 private:
 	void load_box(void);
 
-	Base_Box& m_box;
+	Base_Box m_box;
 	bool m_is_selected;
 	int m_x_fix;
 	Box_Header m_header;

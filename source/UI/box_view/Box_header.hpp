@@ -9,7 +9,7 @@ public:
 	Box_Header(std::string text, bool is_selected, int m_fix);
 	void draw_lines(void);
 	void draw_circles(void);
-	void update(std::string text, bool is_selected);
+	void update(std::string text, bool is_box_selected, bool is_name_selected);
 
 private:
 	bool m_is_selected;

@@ -14,7 +14,8 @@ public:
 		std::vector<std::shared_ptr<UI_Element>>& bottom_elem, u32 key_down);
 
 private:
-	Base_Box& m_box;
+	Base_Box m_box;
+	bool m_viewing_top;
 };
 
 #endif // !BOX_VIEW

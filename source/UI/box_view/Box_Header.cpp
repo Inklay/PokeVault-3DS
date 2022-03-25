@@ -35,6 +35,7 @@ void Box_Header::draw_circles(void) {
 	m_box_name.draw_circles();
 }
 
-void Box_Header::update(std::string text, bool is_selected) {
-
+void Box_Header::update(std::string text, bool is_selected, bool is_name_selected) {
+	m_is_selected = is_selected;
+	m_box_name.update(text, is_name_selected, false);
 }

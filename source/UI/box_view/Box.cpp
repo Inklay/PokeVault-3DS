@@ -3,7 +3,7 @@
 #include <filesystem>
 #include <sstream>
 
-Box::Box(bool selected, Base_Box& box, gfxScreen_t screen) :
+Box::Box(bool selected, Base_Box box, gfxScreen_t screen) :
 m_box(box),
 m_is_selected(selected),
 m_x_fix((screen == GFX_BOTTOM) ? 0 : 40),
@@ -66,7 +66,7 @@ void Box::load_box(void) {
 	}
 }
 
-void Box::update(bool selected, Base_Box& box) {
+void Box::update(bool selected, Base_Box box) {
 	for (C2D_SpriteSheet sheet : m_sheets)
 		C2D_SpriteSheetFree(sheet);
 	m_sheets.clear();
@@ -74,4 +74,5 @@ void Box::update(bool selected, Base_Box& box) {
 	m_is_selected = selected;
 	m_box = box;
 	load_box();
+	m_header.update(m_box.get_name(), m_is_selected, false);
 }

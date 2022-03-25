@@ -16,6 +16,7 @@ public:
 	//void init(Vec3 pos, Vec2 size);
 	void draw_lines(void);
 	void draw_circles(void);
+	void update(std::string text, bool is_selected, bool is_locked);
 
 protected:
 	Vec2 m_size;

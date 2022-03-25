@@ -28,3 +28,9 @@ void Button::draw_circles(void) {
 	if (m_is_selected)
 		m_pointer.draw_circles();
 }
+
+void Button::update(std::string text, bool is_selected, bool is_locked) {
+	m_is_selected = is_selected;
+	m_is_locked = is_locked;
+	m_text.update(text);
+}
