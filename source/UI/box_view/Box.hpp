@@ -18,6 +18,8 @@ public:
 
 private:
 	void load_box(void);
+	bool has_female_sprite(Base_Pokemon pkm);
+	std::string get_pkm_sprite(Base_Pokemon pkm);
 
 	Base_Box m_box;
 	bool m_is_selected;

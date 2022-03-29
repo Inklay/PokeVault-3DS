@@ -2,6 +2,7 @@
 #include "../Colors.hpp"
 #include <filesystem>
 #include <sstream>
+#include "../../core/source/Save/Pkm/Base_Pokemon.hpp"
 
 Box::Box(bool selected, Base_Box box, gfxScreen_t screen) :
 m_box(box),
@@ -40,8 +41,9 @@ void Box::draw_circles(void) {
 	// This is not in the same loop to avoid changing state in citro 2d too much
 	for (size_t x = 0; x < 6; x++) {
 		for (size_t y = 0; y < 5; y++) {
-			if (m_box.get_pokemon_at(x + y * 6).get_PID() != 0) {
-				std::string sprite_path = m_box.get_pokemon_at(x + y * 6).get_sprite();
+			Base_Pokemon pkm = m_box.get_pokemon_at(x + y * 6);
+			if (pkm.get_PID() != 0) {
+				std::string sprite_path = get_pkm_sprite(pkm);
 				C2D_DrawImageAt(m_sprites.at(sprite_path), 36 + m_x_fix + 40 * x, 28 + 37 * y, 0, nullptr, 48.0f / 68.0f, 48.0f / 56.0f);
 			}
 		}
@@ -50,20 +52,44 @@ void Box::draw_circles(void) {
 
 void Box::load_box(void) {
 	for (size_t i = 0; i < 30; i++) {
-		if (m_box.get_pokemon_at(i).get_PID() != 0) {
-			std::stringstream ss;
-			ss << "romfs:/gfx/" << m_box.get_pokemon_at(i).get_sprite() << ".t3x";
-			if (std::filesystem::exists(ss.str())) {
-				C2D_SpriteSheet sheet = C2D_SpriteSheetLoad(ss.str().c_str());
-				m_sprites[m_box.get_pokemon_at(i).get_sprite()] = C2D_SpriteSheetGetImage(sheet, 0);
+		Base_Pokemon pkm = m_box.get_pokemon_at(i);
+		if (pkm.get_PID() != 0) {
+			std::string sprite = get_pkm_sprite(pkm);
+			if (std::filesystem::exists(sprite)) {
+				C2D_SpriteSheet sheet = C2D_SpriteSheetLoad(sprite.c_str());
+				m_sprites[sprite] = C2D_SpriteSheetGetImage(sheet, 0);
 				m_sheets.emplace_back(sheet);
 			} else {
 				C2D_SpriteSheet sheet = C2D_SpriteSheetLoad("romfs:/gfx/other.t3x");
-				m_sprites[m_box.get_pokemon_at(i).get_sprite()] = C2D_SpriteSheetGetImage(sheet, 0);
+				m_sprites[sprite] = C2D_SpriteSheetGetImage(sheet, 0);
 				m_sheets.emplace_back(sheet);
 			}
 		}
 	}
+}
+
+bool Box::has_female_sprite(Base_Pokemon pkm) {
+	return  (pkm.get_gender() == Base_Pokemon::Gender::FEMALE && (
+		pkm.get_dex_number() == 902 ||
+		pkm.get_dex_number() == 592 ||
+		pkm.get_dex_number() == 449 ||
+		pkm.get_dex_number() == 450 ||
+		pkm.get_dex_number() == 876 ||
+		pkm.get_dex_number() == 593 ||
+		pkm.get_dex_number() == 678 ||
+		pkm.get_dex_number() == 25 ||
+		pkm.get_dex_number() == 668 ||
+		pkm.get_dex_number() == 521 ||
+		pkm.get_dex_number() == 202));
+}
+
+std::string Box::get_pkm_sprite(Base_Pokemon pkm) {
+	std::stringstream ss;
+	ss << "romfs:/gfx/" << pkm.get_sprite();
+	if (has_female_sprite(pkm))
+		ss << "-f";
+	ss << ".t3x";
+	return ss.str();
 }
 
 void Box::update(bool selected, Base_Box box) {
