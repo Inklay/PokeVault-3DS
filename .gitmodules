@@ -1,6 +1,3 @@
-[submodule "source/core"]
-	path = source/core
-	url = https://github.com/Inklay/PokeVault-Core
 [submodule "source/mINI"]
 	path = source/mINI
 	url = git@github.com:pulzed/mINI.git
