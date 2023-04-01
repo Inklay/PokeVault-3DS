@@ -5,9 +5,8 @@
 
 class SoulSilver : public Game {
 public:
-	SoulSilver(void);
-	void init_save(void);
-	void set_save(std::string path);
+	SoulSilver(App* app);
+	void SetSave(std::string path);
 };
 
 #endif // !SOULSILVER_HPP

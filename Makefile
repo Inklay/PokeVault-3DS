@@ -34,38 +34,29 @@ include $(DEVKITARM)/3ds_rules
 TARGET			:=	$(notdir $(CURDIR))
 BUILD			:=	build
 SOURCES			:=	source \
-					source/core/source/Save \
-					source/core/source/Save/Block \
-					source/core/source/Save/Game \
-					source/core/source/Save/Pkm \
-					source/core/source/Save/Box \
-					source/core/source/utils \
 					source/utils \
 					source/UI \
-					source/UI/game_select \
-					source/UI/file_explorer \
-					source/UI/box_view \
-					source/scene \
-					source/scene/background \
+					source/UI/GameSelect \
+					source/UI/FileExplorer \
+					source/UI/BoxView \
+					source/Scene \
+					source/Scene/Background \
 					source/Game \
-					source/config
+					source/Config \
+					source/PKSM-Core/source/i18n \
+					source/PKSM-Core/source/personal \
+					source/PKSM-Core/source/pkx \
+					source/PKSM-Core/source/sav \
+					source/PKSM-Core/source/utils \
+					source/PKSM-Core/source/wcx \
+					source/PKSM-CORE/memecrypto
+
 DATA			:=	data
+
 INCLUDES		:=	source \
-					source/core/source/Save \
-					source/core/source/Save/Block \
-					source/core/source/Save/Game \
-					source/core/source/Save/Pkm \
-					source/core/source/Save/Box \
-					source/core/source/utils \
-					source/utils \
-					source/UI \
-					source/UI/game_select \
-					source/UI/file_explorer \
-					source/UI/box_view \
-					source/scene \
-					source/scene/background \
-					source/Game \
-					source/config
+					source/PKSM-CORE/include \
+					source/PKSM-CORE/memecrypto
+
 GRAPHICS		:=	gfx \
 					gfx/game_art \
 					gfx/game_logo \
@@ -89,7 +80,7 @@ CFLAGS	:=	-g -Wall -O2 -mword-relocations \
 
 CFLAGS	+=	$(INCLUDE) -D__3DS__
 
-CXXFLAGS	:= $(CFLAGS) -std=gnu++17
+CXXFLAGS	:= $(CFLAGS) -std=gnu++20
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
@@ -199,6 +190,7 @@ endif
 
 #---------------------------------------------------------------------------------
 all: $(BUILD) $(GFXBUILD) $(DEPSDIR) $(ROMFS_T3XFILES) $(T3XHFILES)
+	@echo $(INCLUDE)
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 $(BUILD):

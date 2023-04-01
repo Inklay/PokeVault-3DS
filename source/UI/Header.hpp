@@ -3,11 +3,11 @@
 
 #include "./Text.hpp"
 
-class Header : public UI_Element {
+class Header : public UIElement {
 public:
 	Header(std::string text);
-	void draw_lines(void);
-	void draw_circles(void) {}
+	void DrawLines(void);
+	void DrawCircles(void) {}
 
 private:
 	Text m_text;

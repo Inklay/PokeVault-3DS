@@ -4,24 +4,24 @@
 #include <string>
 #include <citro2d.h>
 #include "../utils/Vec2.hpp"
-#include "./UI_Element.hpp"
+#include "./UIElement.hpp"
 #include "./Colors.hpp"
 
-class Text : public UI_Element {
+class Text : public UIElement {
 public:
-	enum class center_mode {
+	enum class CenterMode {
 		BOTH,
 		X,
 		Y
 	};
 	Text(Vec3 pos, std::string text, u32 color = colors::black);
 	~Text(void);
-	void draw_lines(void);
-	void draw_lines_centered_XY(Vec2 size, float font_size = 0.5f);
-	void draw_lines_centered_Y(int y, float font_size = 0.5f);
-	void draw_lines_centered_X(int x, float font_size = 0.5f);
-	void draw_circles(void);
-	void update(std::string text);
+	void DrawLines(void);
+	void DrawLinesCenteredXY(Vec2 size, float font_size = 0.5f);
+	void DrawLinesCenteredY(int y, float font_size = 0.5f);
+	void DrawLinesCenteredX(int x, float font_size = 0.5f);
+	void DrawCircles(void) {};
+	void Update(std::string text);
 
 private:
 	C2D_Text m_text;

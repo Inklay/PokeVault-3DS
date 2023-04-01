@@ -1,21 +1,18 @@
 ﻿#include "./Diamond.hpp"
 #include "../config/Config.hpp"
-#include "../core/source/Save/Game/SavePL.hpp"
+#include "../App.hpp"
 
-Diamond::Diamond(void) {
-	m_has_save = config::current.diamond_save_path == "none";
+Diamond::Diamond(App* app) :
+	Game(app)
+{
+	m_has_save = m_app->GetConfig().GetKeyValue("save_location", "diamond") == "none";
 	m_name = "Pokémon Diamond Version";
 	m_box_art = "Diamond.png";
-	m_logo = "Diamond.png";
-	m_game = ASave::Game::DIAMOND;
+	m_logo = "Diamond_EN.png";
+	m_game = pksm::GameVersion::D;
 }
 
-
-void Diamond::init_save(void) {
-
-}
-
-void Diamond::set_save(std::string path) {
+void Diamond::SetSave(std::string path) {
 	m_has_save = path == "none";
-	config::current.diamond_save_path = path;
+	m_app->GetConfig().GetKeyValue("save_location", "diamond") = path;
 }

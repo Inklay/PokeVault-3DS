@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -8,14 +8,6 @@
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -34,16 +26,6 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Makefile</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Makefile</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
-  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -55,15 +37,9 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeBuildCommandLine>make -j 12</NMakeBuildCommandLine>
     <NMakeOutput>
     </NMakeOutput>
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
@@ -71,15 +47,8 @@
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
     <PublicIncludeDirectories>
     </PublicIncludeDirectories>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\devkitPro\devkitARM\include;C:\devkitPro\libctru\include</IncludePath>
-    <AdditionalOptions>/std:c++17</AdditionalOptions>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
-    <NMakeOutput>Pokevault-3DS.exe</NMakeOutput>
-    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
-    <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
-    <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\devkitPro\devkitARM\include;C:\devkitPro\libctru\include;$(SolutionDir)\source\PKSM-Core\include</IncludePath>
+    <AdditionalOptions>/std:c++20</AdditionalOptions>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
@@ -87,13 +56,6 @@
     <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
     <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
-    <NMakeOutput>Pokevault-3DS.exe</NMakeOutput>
-    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
-    <NMakeReBuildCommandLine>make clean all</NMakeReBuildCommandLine>
-    <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
@@ -1349,23 +1311,9 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\config\Config.cpp" />
-    <ClCompile Include="source\core\source\main.cpp" />
-    <ClCompile Include="source\core\source\Save\ASave.cpp" />
-    <ClCompile Include="source\core\source\Save\ASave4.cpp" />
+    <ClCompile Include="source\Config\Config.cpp" />
     <ClCompile Include="source\core\source\Save\Block\Box4.cpp" />
-    <ClCompile Include="source\core\source\Save\Block\Footer4.cpp" />
-    <ClCompile Include="source\core\source\Save\Block\Storage4.cpp" />
-    <ClCompile Include="source\core\source\Save\Box\Base_Box.cpp" />
-    <ClCompile Include="source\core\source\Save\Box\Box4.cpp" />
-    <ClCompile Include="source\core\source\Save\Game\SavePL.cpp" />
     <ClCompile Include="source\core\source\Save\Pkm\APokemon.cpp" />
-    <ClCompile Include="source\core\source\Save\Pkm\Base_Pokemon.cpp" />
-    <ClCompile Include="source\core\source\Save\Pkm\Pk4.cpp" />
-    <ClCompile Include="source\core\source\utils\utils.cpp" />
-    <ClCompile Include="source\core\source\utils\utils4.cpp" />
-    <ClCompile Include="source\Game\current_game.cpp" />
-    <ClCompile Include="source\Game\current_game.hpp" />
     <ClCompile Include="source\Game\Diamond.cpp" />
     <ClCompile Include="source\Game\Game.cpp" />
     <ClCompile Include="source\Game\HeartGold.cpp" />
@@ -1373,47 +1321,37 @@
     <ClCompile Include="source\Game\Platinum.cpp" />
     <ClCompile Include="source\Game\SoulSilver.cpp" />
     <ClCompile Include="source\main.cpp" />
-    <ClCompile Include="source\scene\background\Square.cpp" />
-    <ClCompile Include="source\scene\Box_View.cpp" />
-    <ClCompile Include="source\scene\Box_View.hpp" />
+    <ClCompile Include="source\Scene\Background\BackgroundSquare.cpp" />
+    <ClCompile Include="source\Scene\BoxView.cpp" />
+    <ClCompile Include="source\Scene\BoxView.hpp" />
+    <ClCompile Include="source\App.cpp" />
     <ClCompile Include="source\UI\AButton.cpp" />
-    <ClCompile Include="source\UI\box_view\Box.cpp" />
-    <ClCompile Include="source\UI\box_view\Box_Header.cpp" />
-    <ClCompile Include="source\UI\file_explorer\File.cpp" />
+    <ClCompile Include="source\UI\BoxView\Box.cpp" />
+    <ClCompile Include="source\UI\BoxView\BoxHeader.cpp" />
+    <ClCompile Include="source\UI\FileExplorer\File.cpp" />
     <ClCompile Include="source\UI\Footer.cpp" />
     <ClCompile Include="source\UI\Image.cpp" />
-    <ClCompile Include="source\UI\Text_Box.cpp" />
+    <ClCompile Include="source\UI\TextBox.cpp" />
     <ClCompile Include="source\UI\Popup.cpp" />
-    <ClCompile Include="source\scene\Scene.cpp" />
-    <ClCompile Include="source\scene\current_scene.hpp" />
-    <ClCompile Include="source\scene\File_Explorer.cpp" />
-    <ClCompile Include="source\scene\Game_Select.cpp" />
-    <ClCompile Include="source\scene\background\Background.cpp" />
-    <ClCompile Include="source\UI\Arrow_Pointer.cpp" />
+    <ClCompile Include="source\Scene\Scene.cpp" />
+    <ClCompile Include="source\Scene\FileExplorer.cpp" />
+    <ClCompile Include="source\Scene\GameSelect.cpp" />
+    <ClCompile Include="source\Scene\Background\Background.cpp" />
+    <ClCompile Include="source\UI\ArrowPointer.cpp" />
     <ClCompile Include="source\UI\Button.cpp" />
-    <ClCompile Include="source\UI\game_select\Game_Info.cpp" />
-    <ClCompile Include="source\UI\game_select\Game_Art.cpp" />
+    <ClCompile Include="source\UI\GameSelect\GameInfo.cpp" />
+    <ClCompile Include="source\UI\GameSelect\GameArt.cpp" />
     <ClCompile Include="source\UI\Header.cpp" />
-    <ClCompile Include="source\UI\Arrow_Pointer.hpp" />
+    <ClCompile Include="source\UI\ArrowPointer.hpp" />
     <ClCompile Include="source\UI\Text.cpp" />
     <ClCompile Include="source\utils\Vec2.cpp" />
     <ClCompile Include="source\utils\Vec3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\config\Config.hpp" />
-    <ClInclude Include="source\core\source\Save\ASave.hpp" />
-    <ClInclude Include="source\core\source\Save\ASave4.hpp" />
+    <ClInclude Include="source\App.hpp" />
+    <ClInclude Include="source\Config\Config.hpp" />
     <ClInclude Include="source\core\source\Save\Block\Box4.hpp" />
-    <ClInclude Include="source\core\source\Save\Block\Footer4.hpp" />
-    <ClInclude Include="source\core\source\Save\Block\Storage4.hpp" />
-    <ClInclude Include="source\core\source\Save\Box\Base_Box.hpp" />
-    <ClInclude Include="source\core\source\Save\Box\Box4.hpp" />
-    <ClInclude Include="source\core\source\Save\Game\SavePL.hpp" />
     <ClInclude Include="source\core\source\Save\Pkm\APokemon.hpp" />
-    <ClInclude Include="source\core\source\Save\Pkm\Base_Pokemon.hpp" />
-    <ClInclude Include="source\core\source\Save\Pkm\Pk4.hpp" />
-    <ClInclude Include="source\core\source\utils\utils.hpp" />
-    <ClInclude Include="source\core\source\utils\utils4.hpp" />
     <ClInclude Include="source\Game\all.hpp" />
     <ClInclude Include="source\Game\Diamond.hpp" />
     <ClInclude Include="source\Game\Game.hpp" />
@@ -1421,26 +1359,27 @@
     <ClInclude Include="source\Game\Pearl.hpp" />
     <ClInclude Include="source\Game\Platinum.hpp" />
     <ClInclude Include="source\Game\SoulSilver.hpp" />
-    <ClInclude Include="source\scene\background\Square.hpp" />
+    <ClInclude Include="source\PKSMCORE_CONFIG.h" />
+    <ClInclude Include="source\Scene\Background\BackgroundSquare.hpp" />
     <ClInclude Include="source\UI\AButton.hpp" />
-    <ClInclude Include="source\UI\box_view\Box.hpp" />
-    <ClInclude Include="source\UI\box_view\Box_header.hpp" />
-    <ClInclude Include="source\UI\file_explorer\File.hpp" />
+    <ClInclude Include="source\UI\BoxView\Box.hpp" />
+    <ClInclude Include="source\UI\BoxView\BoxHeader.hpp" />
+    <ClInclude Include="source\UI\FileExplorer\File.hpp" />
     <ClInclude Include="source\UI\Footer.hpp" />
     <ClInclude Include="source\UI\Image.hpp" />
-    <ClInclude Include="source\UI\Text_Box.hpp" />
+    <ClInclude Include="source\UI\TextBox.hpp" />
     <ClInclude Include="source\UI\Popup.hpp" />
-    <ClInclude Include="source\scene\File_Explorer.hpp" />
-    <ClInclude Include="source\scene\Game_Select.hpp" />
-    <ClInclude Include="source\scene\Scene.hpp" />
-    <ClInclude Include="source\scene\background\Background.hpp" />
+    <ClInclude Include="source\Scene\FileExplorer.hpp" />
+    <ClInclude Include="source\Scene\GameSelect.hpp" />
+    <ClInclude Include="source\Scene\Scene.hpp" />
+    <ClInclude Include="source\Scene\Background\Background.hpp" />
     <ClInclude Include="source\UI\Button.hpp" />
     <ClInclude Include="source\UI\Colors.hpp" />
-    <ClInclude Include="source\UI\game_select\Game_Info.hpp" />
-    <ClInclude Include="source\UI\game_select\Game_Art.hpp" />
+    <ClInclude Include="source\UI\GameSelect\GameInfo.hpp" />
+    <ClInclude Include="source\UI\GameSelect\GameArt.hpp" />
     <ClInclude Include="source\UI\Header.hpp" />
     <ClInclude Include="source\UI\Text.hpp" />
-    <ClInclude Include="source\UI\UI_Element.hpp" />
+    <ClInclude Include="source\UI\UIElement.hpp" />
     <ClInclude Include="source\utils\SpriteSheet.hpp" />
     <ClInclude Include="source\utils\Vec2.hpp" />
     <ClInclude Include="source\utils\Vec3.hpp" />

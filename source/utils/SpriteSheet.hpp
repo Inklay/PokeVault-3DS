@@ -16,7 +16,11 @@ namespace spritesheet {
     };
 
     const std::map<std::string, int> game_logo = {
-        { "Platinum_EN.png", 0 }
+        { "Platinum_EN.png", 0 },
+        { "Diamond_EN.png", 1 },
+        { "Pearl_EN.png", 2 },
+        { "HeartGold_EN.png", 3 },
+        { "SoulSilver_EN.png", 4 }
     };
 };
 

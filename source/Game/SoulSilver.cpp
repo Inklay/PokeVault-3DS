@@ -1,20 +1,18 @@
 ﻿#include "./SoulSilver.hpp"
 #include "../config/Config.hpp"
-#include "../core/source/Save/Game/SavePL.hpp"
+#include "../App.hpp"
 
-SoulSilver::SoulSilver(void) {
-	m_has_save = config::current.soulsilver_save_path == "none";
+SoulSilver::SoulSilver(App* app) :
+	Game(app)
+{
+	m_has_save = m_app->GetConfig().GetKeyValue("save_location", "soulsilver") == "none";
 	m_name = "Pokémon Soul Silver Version";
 	m_box_art = "SoulSilver.png";
-	m_logo = "SoulSilver.png";
-	m_game = ASave::Game::SOULSILVER;
+	m_logo = "SoulSilver_EN.png";
+	m_game = pksm::GameVersion::SS;
 }
 
-void SoulSilver::init_save(void) {
-
-}
-
-void SoulSilver::set_save(std::string path) {
+void SoulSilver::SetSave(std::string path) {
 	m_has_save = path == "none";
-	config::current.soulsilver_save_path = path;
+	m_app->GetConfig().GetKeyValue("save_location", "soulsilver") = path;
 }

@@ -1,30 +1,28 @@
 ﻿#include "./Platinum.hpp"
 #include "../config/Config.hpp"
-#include "../core/source/Save/Game/SavePL.hpp"
-#include "../scene/File_Explorer.hpp"
+#include "../PKSM-Core/include/sav/SavPT.hpp"
+#include "../scene/FileExplorer.hpp"
+#include "../App.hpp"
 
-Platinum::Platinum(void) {
-	m_has_save = config::current.platinum_save_path != "none";
+Platinum::Platinum(App* app) :
+	Game(app)
+{
+	m_save_location_config_name = "platinum";
+	m_has_save = m_app->GetConfig().GetKeyValue("save_location", m_save_location_config_name) != "none";
 	m_name = "Pokémon Platinum Version";
 	m_box_art = "Platinum.png";
 	m_logo = "Platinum_EN.png";
-	m_game = ASave::Game::PLATINUM;
+	m_game = pksm::GameVersion::Pt;
 	m_file_extension = ".SAV";
+	m_size = 0x80000;
+	GetBaseData();
 }
 
-void Platinum::init_save(void) {
-	if (m_has_save && !m_is_init) {
-		save = std::make_unique<SavePL>(config::current.platinum_save_path);
-		save->init(config::current.platinum_save_path);
-		m_is_init = true;
-	}
-}
-
-void Platinum::set_save(std::string path) {
+void Platinum::SetSave(std::string path) {
 	m_has_save = path != "none";
-	config::current.platinum_save_path = path;
+	m_app->GetConfig().GetKeyValue("save_location", m_save_location_config_name) = path;
 	if (m_has_save) {
 		m_is_init = false;
-		init_save();
+		GetBaseData();
 	}
 }

@@ -5,9 +5,8 @@
 
 class HeartGold : public Game {
 public:
-	HeartGold(void);
-	void init_save(void);
-	void set_save(std::string path);
+	HeartGold(App* app);
+	void SetSave(std::string path);
 };
 
 #endif // !HEARTGOLD_HPP

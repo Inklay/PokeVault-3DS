@@ -3,16 +3,16 @@
 
 #include <citro2d.h>
 #include <vector>
-#include "./Square.hpp"
+#include "./BackgroundSquare.hpp"
 
 class Background {
 public:
-	Background(void);
-	void update_top(void);
-	void update_bottom(void);
+	Background();
+	void DrawTop();
+	void DrawBottom();
 
 private:
-	std::vector<Background_Square> m_squares;
+	std::vector<BackgroundSquare> m_squares;
 	const std::vector<u32> m_colors;
 };
 

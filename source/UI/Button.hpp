@@ -7,21 +7,21 @@
 #include "../utils/Vec2.hpp"
 #include <citro2d.h>
 #include "./Text.hpp"
-#include "./Arrow_Pointer.hpp"
+#include "./ArrowPointer.hpp"
 
 class Button : public AButton {
 public:
 	Button(Vec3 pos, Vec2 size, std::string text, bool locked = false, bool selected = false);
 	//Button(std::string text, bool locked = false, bool selected = false);
 	//void init(Vec3 pos, Vec2 size);
-	void draw_lines(void);
-	void draw_circles(void);
-	void update(std::string text, bool is_selected, bool is_locked);
+	void DrawLines();
+	void DrawCircles();
+	void Update(std::string text, bool is_selected, bool is_locked);
 
 protected:
 	Vec2 m_size;
 	Text m_text;
-	Arrow_Pointer m_pointer;
+	ArrowPointer m_pointer;
 };
 
 #endif // !BUTTON_HPP

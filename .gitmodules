@@ -4,3 +4,6 @@
 [submodule "source/mINI"]
 	path = source/mINI
 	url = git@github.com:pulzed/mINI.git
+[submodule "source/PKSM-Core"]
+	path = source/PKSM-Core
+	url = git@github.com:FlagBrew/PKSM-Core.git

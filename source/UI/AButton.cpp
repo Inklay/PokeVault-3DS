@@ -1,7 +1,7 @@
 #include "./AButton.hpp"
 #include "./Colors.hpp"
 
-u32 AButton::get_color(void) {
+u32 AButton::GetColor() const {
 	if (m_is_locked)
 		return colors::locked;
 	else if (m_is_selected)
@@ -9,6 +9,6 @@ u32 AButton::get_color(void) {
 	return colors::white;
 }
 
-void AButton::set_selected(bool selected) {
+void AButton::SetSelected(bool selected) {
 	m_is_selected = selected;
 }

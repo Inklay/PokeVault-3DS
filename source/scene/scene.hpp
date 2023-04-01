@@ -1,25 +1,42 @@
-#ifndef SCENES_HPP
-#define SCENES_HPP
+#ifndef SCENE_HPP
+#define SCENE_HPP
 
 #include <vector>
 #include <memory>
 #include "../UI/AButton.hpp"
 #include <string>
+#include "../UI/Popup.hpp"
+
+class App;
 
 class Scene {
 public:
-	virtual void load(std::vector<std::shared_ptr<UI_Element>>& top_elem,
-		std::vector<std::shared_ptr<UI_Element>>& bottom_elem) = 0;
-	virtual void unload(void) = 0;
-	virtual void update(std::vector<std::shared_ptr<UI_Element>>& top_elem,
-		std::vector<std::shared_ptr<UI_Element>>& bottom_elem, u32 key_down) = 0;
-	void update_selected(std::shared_ptr<AButton> selected);
-	std::string get_name(void);
+	enum Type {
+		GAME_SELECT,
+		FILE_EXPLORER,
+		BOX_VIEW
+	};
+
+	Scene(App* app);
+	virtual ~Scene() {};
+	virtual void DrawTop() = 0;
+	virtual void DrawBottom() = 0;
+	virtual void Update(u32 key_down) = 0;
+	void UpdateSelected(AButton* selected);
+	Type GetType() const;
+	void ShowPopup(std::string text, std::string name);
+	void HidePopup();
+	void DrawPopupLines();
+	void DrawPopupCircles();
+	std::string GetPopupName();
 
 protected:
-	std::string m_name;
-	std::shared_ptr<AButton> m_selected;
-	std::shared_ptr<AButton> m_old_selected;
+	App* m_app;
+	Popup m_popup;
+	bool m_is_popup_active;
+	Type m_type;
+	AButton* m_selected;
+	AButton* m_old_selected;
 };
 
-#endif // !SCENES_HPP
+#endif // !SCENE_HPP
